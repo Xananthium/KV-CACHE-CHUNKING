@@ -2,6 +2,8 @@
 
 The CPU `adapter_contract.py` and `chunk_bank.py` are working reference pieces. They are not a loaded vLLM plugin. The production vLLM 0.32/custom TurboQuant setup remains untouched and unverified by this repository.
 
+[The Gemma4/TurboQuant audit](GEMMA4_ADAPTER.md) now identifies the actual local/global attention, proportional RoPE, mixed BF16/TQ boundary layers, SoA packing, allocator and MTP hooks. `gemma4_contract.py` adds ten CPU metadata/algebra checks. This is an adapter plan with explicit rejected cases, not Gemma inference support.
+
 An experiment on a feature branch should use a separate namespace for contextual chunks. Preserve ordinary prefix-cache keys and their exact parent-prefix requirement. A contextual chunk import must identify weights, tokenizer, layer, head layout, dtype/codec, original positions, token IDs, and donor-prefix provenance. Do not count a contextual import as an exact prefix hit.
 
 The initial backend API can have five operations:

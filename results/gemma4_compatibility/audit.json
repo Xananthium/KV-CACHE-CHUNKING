@@ -1,0 +1,4376 @@
+{
+  "status": "static_cpu_audit_not_backend_support",
+  "observed_utc": "2026-10-23T16:32:33.375204+00:00",
+  "config_sha256": "bda043898b665598b3e35b580d5f0e06c5509d4d19f0c66bf3e929ea5bf65c6e",
+  "tokenizer_sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+  "runtime_snapshot_sha256": "4f41b6f0acc9df3d7d1da6b03557d13f834d139153c654b656782638695d1dfe",
+  "runtime_snapshot_utc": "2026-10-23T14:26:33.401018+00:00",
+  "captured_metrics_sha256": "1ff46857611b3635e55626406dd3aafb85c1fc09f1004a5bb094b0f2e1963540",
+  "runtime_source_revision_reported": "9654466e82d83f5ebfe1518a369bc5900873abb1",
+  "runtime_manifest_sha256_reported": "0bfac2d84687d357acc76b840ca77fd6fa95cef74c39f8c0e1f19a265be0dd8a",
+  "tensor_parallel_size": 2,
+  "configured_context": 200000,
+  "model_max_positions": 262144,
+  "primary_block_size_captured": 16,
+  "physical_per_group_geometry_captured": false,
+  "boundary_native_layers": [
+    0,
+    1,
+    58,
+    59
+  ],
+  "cache_dtype": "turboquant_4bit_nc",
+  "unified_tq": true,
+  "swa_bounded_replay_captured": "True",
+  "speculative_method": "mtp",
+  "speculative_tokens": 2,
+  "final_vocabulary_logit_softcap": 30.0,
+  "attention_softcap": null,
+  "all_layer_shapes_are_per_rank": true,
+  "layers": [
+    {
+      "layer": 0,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "native_bf16",
+      "storage_dtype": "bfloat16",
+      "packing": "backend_native_kv",
+      "bytes_per_head_token": 1024,
+      "key_norm_semantics": "none"
+    },
+    {
+      "layer": 1,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "native_bf16",
+      "storage_dtype": "bfloat16",
+      "packing": "backend_native_kv",
+      "bytes_per_head_token": 1024,
+      "key_norm_semantics": "none"
+    },
+    {
+      "layer": 2,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 3,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 4,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 5,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 6,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 7,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 8,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 9,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 10,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 11,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 12,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 13,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 14,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 15,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 16,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 17,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 18,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 19,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 20,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 21,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 22,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 23,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 24,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 25,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 26,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 27,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 28,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 29,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 30,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 31,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 32,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 33,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 34,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 35,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 36,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 37,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 38,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 39,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 40,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 41,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 42,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 43,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 44,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 45,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 46,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 47,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 48,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 49,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 50,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 51,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 52,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 53,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 518,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 54,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 55,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 56,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 57,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "turboquant_4bit_nc",
+      "storage_dtype": "uint8",
+      "packing": "tq_soa_data_then_head_field_token",
+      "bytes_per_head_token": 262,
+      "key_norm_semantics": "fp16_norm_div_centroid_norm_at_store"
+    },
+    {
+      "layer": 58,
+      "attention_type": "sliding_attention",
+      "query_heads": 16,
+      "kv_heads": 8,
+      "head_dim": 256,
+      "rope_type": "default",
+      "rope_theta": 10000.0,
+      "rotary_pairs": 128,
+      "scale": 1.0,
+      "sliding_window": 1024,
+      "attention_softcap": null,
+      "codec": "native_bf16",
+      "storage_dtype": "bfloat16",
+      "packing": "backend_native_kv",
+      "bytes_per_head_token": 1024,
+      "key_norm_semantics": "none"
+    },
+    {
+      "layer": 59,
+      "attention_type": "full_attention",
+      "query_heads": 16,
+      "kv_heads": 2,
+      "head_dim": 512,
+      "rope_type": "proportional",
+      "rope_theta": 1000000.0,
+      "rotary_pairs": 64,
+      "scale": 1.0,
+      "sliding_window": null,
+      "attention_softcap": null,
+      "codec": "native_bf16",
+      "storage_dtype": "bfloat16",
+      "packing": "backend_native_kv",
+      "bytes_per_head_token": 2048,
+      "key_norm_semantics": "none"
+    }
+  ],
+  "source_files": {
+    "model_executor/models/gemma4.py": {
+      "sha256": "e3922b9373db89b1aec00b06f4128448056f324e36c9ce7b81927bda04da3a33",
+      "symbols": [
+        {
+          "name": "_gemma4_layer_weights_mapper",
+          "line": 86
+        },
+        {
+          "name": "_gemma4_routing_kernel",
+          "line": 131
+        },
+        {
+          "name": "gemma4_fused_routing_kernel_triton",
+          "line": 196
+        },
+        {
+          "name": "gemma4_routing_function_torch",
+          "line": 221
+        },
+        {
+          "name": "_get_text_config",
+          "line": 244
+        },
+        {
+          "name": "Gemma4MLP",
+          "line": 256
+        },
+        {
+          "name": "Gemma4Router",
+          "line": 289
+        },
+        {
+          "name": "Gemma4Attention",
+          "line": 365
+        },
+        {
+          "name": "Gemma4DecoderLayer",
+          "line": 560
+        },
+        {
+          "name": "_run_decoder_layers",
+          "line": 779
+        },
+        {
+          "name": "Gemma4SelfDecoderLayers",
+          "line": 807
+        },
+        {
+          "name": "Gemma4CrossDecoderLayers",
+          "line": 954
+        },
+        {
+          "name": "Gemma4Model",
+          "line": 989
+        },
+        {
+          "name": "Gemma4ForCausalLM",
+          "line": 1402
+        },
+        {
+          "name": "__init__",
+          "line": 257
+        },
+        {
+          "name": "forward",
+          "line": 282
+        },
+        {
+          "name": "__init__",
+          "line": 300
+        },
+        {
+          "name": "routing_function",
+          "line": 333
+        },
+        {
+          "name": "forward",
+          "line": 356
+        },
+        {
+          "name": "__init__",
+          "line": 366
+        },
+        {
+          "name": "forward",
+          "line": 521
+        },
+        {
+          "name": "__init__",
+          "line": 561
+        },
+        {
+          "name": "forward",
+          "line": 711
+        },
+        {
+          "name": "__init__",
+          "line": 814
+        },
+        {
+          "name": "embed_input_ids",
+          "line": 863
+        },
+        {
+          "name": "get_per_layer_inputs",
+          "line": 866
+        },
+        {
+          "name": "project_per_layer_inputs",
+          "line": 891
+        },
+        {
+          "name": "forward",
+          "line": 920
+        },
+        {
+          "name": "__init__",
+          "line": 957
+        },
+        {
+          "name": "forward",
+          "line": 969
+        },
+        {
+          "name": "__init__",
+          "line": 990
+        },
+        {
+          "name": "embed_input_ids",
+          "line": 1198
+        },
+        {
+          "name": "get_per_layer_inputs",
+          "line": 1201
+        },
+        {
+          "name": "project_per_layer_inputs",
+          "line": 1211
+        },
+        {
+          "name": "fast_prefill_forward",
+          "line": 1229
+        },
+        {
+          "name": "forward",
+          "line": 1314
+        },
+        {
+          "name": "load_weights",
+          "line": 1397
+        },
+        {
+          "name": "__init__",
+          "line": 1435
+        },
+        {
+          "name": "embed_input_ids",
+          "line": 1482
+        },
+        {
+          "name": "forward",
+          "line": 1485
+        },
+        {
+          "name": "compute_logits",
+          "line": 1498
+        },
+        {
+          "name": "load_weights",
+          "line": 1504
+        },
+        {
+          "name": "_make_empty_intermediate_tensors",
+          "line": 1176
+        }
+      ]
+    },
+    "model_executor/models/gemma4_mtp.py": {
+      "sha256": "5514351d1b25f7827119d1431592cb44c33f4974496dc3d5de706b0797a6a453",
+      "symbols": [
+        {
+          "name": "Gemma4MTPMaskedEmbedder",
+          "line": 61
+        },
+        {
+          "name": "Gemma4MTPAttention",
+          "line": 149
+        },
+        {
+          "name": "Gemma4MTPDecoderLayer",
+          "line": 255
+        },
+        {
+          "name": "Gemma4MultiTokenPredictor",
+          "line": 336
+        },
+        {
+          "name": "Gemma4MTP",
+          "line": 440
+        },
+        {
+          "name": "__init__",
+          "line": 72
+        },
+        {
+          "name": "_select_and_score",
+          "line": 93
+        },
+        {
+          "name": "forward",
+          "line": 124
+        },
+        {
+          "name": "get_top_tokens",
+          "line": 139
+        },
+        {
+          "name": "__init__",
+          "line": 157
+        },
+        {
+          "name": "forward",
+          "line": 235
+        },
+        {
+          "name": "__init__",
+          "line": 256
+        },
+        {
+          "name": "forward",
+          "line": 306
+        },
+        {
+          "name": "__init__",
+          "line": 337
+        },
+        {
+          "name": "embed_input_ids",
+          "line": 401
+        },
+        {
+          "name": "forward",
+          "line": 404
+        },
+        {
+          "name": "__init__",
+          "line": 462
+        },
+        {
+          "name": "embed_input_ids",
+          "line": 524
+        },
+        {
+          "name": "forward",
+          "line": 527
+        },
+        {
+          "name": "_get_full_lm_head_weight",
+          "line": 546
+        },
+        {
+          "name": "compute_logits",
+          "line": 563
+        },
+        {
+          "name": "get_top_tokens",
+          "line": 579
+        },
+        {
+          "name": "load_weights",
+          "line": 598
+        }
+      ]
+    },
+    "model_executor/layers/rotary_embedding/gemma4_rope.py": {
+      "sha256": "b181e6e49d76feb3c82cf5486deb869322a35062b7e0e96d6785e64b451ffd31",
+      "symbols": [
+        {
+          "name": "Gemma4RotaryEmbedding",
+          "line": 16
+        },
+        {
+          "name": "__init__",
+          "line": 30
+        },
+        {
+          "name": "_compute_inv_freq",
+          "line": 57
+        },
+        {
+          "name": "extra_repr",
+          "line": 79
+        }
+      ]
+    },
+    "model_executor/layers/attention/attention.py": {
+      "sha256": "bde77677fd0e95ea09c6a580dfaf09b57741e8183e00cb106e2d1cc64d8e03f2",
+      "symbols": [
+        {
+          "name": "validate_kv_sharing_target",
+          "line": 61
+        },
+        {
+          "name": "should_load_quant_weights",
+          "line": 94
+        },
+        {
+          "name": "_largest_kernel_block_within",
+          "line": 101
+        },
+        {
+          "name": "set_default_quant_scales",
+          "line": 133
+        },
+        {
+          "name": "_init_kv_cache_quant",
+          "line": 157
+        },
+        {
+          "name": "Attention",
+          "line": 229
+        },
+        {
+          "name": "get_attention_context",
+          "line": 680
+        },
+        {
+          "name": "unified_kv_cache_update",
+          "line": 724
+        },
+        {
+          "name": "unified_kv_cache_update_fake",
+          "line": 749
+        },
+        {
+          "name": "unified_attention_with_output",
+          "line": 767
+        },
+        {
+          "name": "__init__",
+          "line": 241
+        },
+        {
+          "name": "forward",
+          "line": 488
+        },
+        {
+          "name": "extra_repr",
+          "line": 581
+        },
+        {
+          "name": "process_weights_after_loading",
+          "line": 589
+        },
+        {
+          "name": "get_attn_backend",
+          "line": 603
+        },
+        {
+          "name": "get_kv_cache_spec",
+          "line": 606
+        }
+      ]
+    },
+    "model_executor/layers/quantization/turboquant/config.py": {
+      "sha256": "203190625cdec38a551b0f40ddfedb5fd053cc38f50c0c2c47816a777c030f6c",
+      "symbols": [
+        {
+          "name": "TurboQuantConfig",
+          "line": 45
+        },
+        {
+          "name": "_get_full_attention_layer_indices",
+          "line": 236
+        },
+        {
+          "name": "key_fp8",
+          "line": 96
+        },
+        {
+          "name": "mse_bits",
+          "line": 101
+        },
+        {
+          "name": "key_mse_bits",
+          "line": 113
+        },
+        {
+          "name": "centroid_bits",
+          "line": 120
+        },
+        {
+          "name": "n_centroids",
+          "line": 125
+        },
+        {
+          "name": "key_packed_size",
+          "line": 129
+        },
+        {
+          "name": "effective_value_quant_bits",
+          "line": 146
+        },
+        {
+          "name": "value_packed_size",
+          "line": 151
+        },
+        {
+          "name": "slot_size",
+          "line": 160
+        },
+        {
+          "name": "slot_size_aligned",
+          "line": 168
+        },
+        {
+          "name": "get_boundary_skip_layers",
+          "line": 178
+        },
+        {
+          "name": "from_cache_dtype",
+          "line": 216
+        }
+      ]
+    },
+    "model_executor/layers/quantization/turboquant/centroids.py": {
+      "sha256": "c91906fe27c0a1b2f76811935336978d929e6a11d0b4aa71a3472d9c14744a05",
+      "symbols": [
+        {
+          "name": "_gaussian_pdf",
+          "line": 18
+        },
+        {
+          "name": "_trapz",
+          "line": 22
+        },
+        {
+          "name": "solve_lloyd_max",
+          "line": 31
+        },
+        {
+          "name": "get_centroids",
+          "line": 84
+        },
+        {
+          "name": "pdf",
+          "line": 54
+        }
+      ]
+    },
+    "engine/arg_utils.py": {
+      "sha256": "c10281277fd9a90dc8b22670db4f1af53708c5caa2aefee7aa861fa579329219",
+      "symbols": [
+        {
+          "name": "parse_type",
+          "line": 160
+        },
+        {
+          "name": "optional_type",
+          "line": 172
+        },
+        {
+          "name": "union_dict_and_str",
+          "line": 181
+        },
+        {
+          "name": "is_type",
+          "line": 187
+        },
+        {
+          "name": "is_dict_subclass",
+          "line": 192
+        },
+        {
+          "name": "contains_type",
+          "line": 204
+        },
+        {
+          "name": "get_type",
+          "line": 209
+        },
+        {
+          "name": "literal_to_kwargs",
+          "line": 214
+        },
+        {
+          "name": "collection_to_kwargs",
+          "line": 231
+        },
+        {
+          "name": "is_not_builtin",
+          "line": 256
+        },
+        {
+          "name": "get_type_hints",
+          "line": 261
+        },
+        {
+          "name": "_maybe_add_docs_url",
+          "line": 285
+        },
+        {
+          "name": "_expand_json_human_readable_numbers",
+          "line": 296
+        },
+        {
+          "name": "_compute_kwargs",
+          "line": 319
+        },
+        {
+          "name": "get_kwargs",
+          "line": 437
+        },
+        {
+          "name": "DeprecatedLogConfigFileAction",
+          "line": 462
+        },
+        {
+          "name": "EngineArgs",
+          "line": 471
+        },
+        {
+          "name": "AsyncEngineArgs",
+          "line": 3190
+        },
+        {
+          "name": "_raise_unsupported_error",
+          "line": 3218
+        },
+        {
+          "name": "_parse_type",
+          "line": 161
+        },
+        {
+          "name": "_optional_type",
+          "line": 173
+        },
+        {
+          "name": "__call__",
+          "line": 465
+        },
+        {
+          "name": "__post_init__",
+          "line": 858
+        },
+        {
+          "name": "add_cli_args",
+          "line": 934
+        },
+        {
+          "name": "from_cli_args",
+          "line": 1933
+        },
+        {
+          "name": "create_model_config",
+          "line": 1943
+        },
+        {
+          "name": "validate_tensorizer_args",
+          "line": 2027
+        },
+        {
+          "name": "create_load_config",
+          "line": 2036
+        },
+        {
+          "name": "create_speculative_config",
+          "line": 2060
+        },
+        {
+          "name": "_resolve_device_ids",
+          "line": 2101
+        },
+        {
+          "name": "create_diffusion_config",
+          "line": 2142
+        },
+        {
+          "name": "create_watermark_config",
+          "line": 2150
+        },
+        {
+          "name": "create_structured_outputs_config",
+          "line": 2158
+        },
+        {
+          "name": "create_observability_config",
+          "line": 2177
+        },
+        {
+          "name": "create_logging_config",
+          "line": 2195
+        },
+        {
+          "name": "create_engine_config",
+          "line": 2205
+        },
+        {
+          "name": "_check_feature_supported",
+          "line": 2874
+        },
+        {
+          "name": "get_batch_defaults",
+          "line": 2894
+        },
+        {
+          "name": "_set_default_chunked_prefill_and_prefix_caching_args",
+          "line": 2987
+        },
+        {
+          "name": "_set_default_reasoning_config_args",
+          "line": 3057
+        },
+        {
+          "name": "_get_min_mm_batched_tokens",
+          "line": 3065
+        },
+        {
+          "name": "_set_default_max_num_seqs_and_batched_tokens_args",
+          "line": 3097
+        },
+        {
+          "name": "add_cli_args",
+          "line": 3196
+        },
+        {
+          "name": "parse_dataclass",
+          "line": 363
+        }
+      ]
+    },
+    "v1/kv_cache_interface.py": {
+      "sha256": "39ea5be3054f97238f81ba070ea661f1b5975a6268ced5f413d4a057ea449d4a",
+      "symbols": [
+        {
+          "name": "KVQuantMode",
+          "line": 40
+        },
+        {
+          "name": "get_kv_quant_mode",
+          "line": 91
+        },
+        {
+          "name": "is_quantized_kv_cache",
+          "line": 115
+        },
+        {
+          "name": "replace_as",
+          "line": 119
+        },
+        {
+          "name": "kv_cache_uses_per_token_head_scales",
+          "line": 141
+        },
+        {
+          "name": "KVCacheSpecKind",
+          "line": 146
+        },
+        {
+          "name": "SparseCacheRole",
+          "line": 159
+        },
+        {
+          "name": "KVCacheSpec",
+          "line": 165
+        },
+        {
+          "name": "group_kernel_blocks",
+          "line": 307
+        },
+        {
+          "name": "compute_layer_kv_cache_shape_bytes",
+          "line": 319
+        },
+        {
+          "name": "compute_layout_strides",
+          "line": 338
+        },
+        {
+          "name": "create_kv_cache_views",
+          "line": 377
+        },
+        {
+          "name": "HiSparseHotSpec",
+          "line": 445
+        },
+        {
+          "name": "HiSparseResidentSpec",
+          "line": 479
+        },
+        {
+          "name": "AttentionSpec",
+          "line": 511
+        },
+        {
+          "name": "FullAttentionSpec",
+          "line": 578
+        },
+        {
+          "name": "_apply_alignment_padding",
+          "line": 676
+        },
+        {
+          "name": "MLAAttentionSpec",
+          "line": 686
+        },
+        {
+          "name": "HiddenStateCacheSpec",
+          "line": 758
+        },
+        {
+          "name": "RSWASpec",
+          "line": 765
+        },
+        {
+          "name": "ChunkedLocalAttentionSpec",
+          "line": 810
+        },
+        {
+          "name": "SlidingWindowSpec",
+          "line": 850
+        },
+        {
+          "name": "CircularBufferSpec",
+          "line": 909
+        },
+        {
+          "name": "SlidingWindowMLASpec",
+          "line": 949
+        },
+        {
+          "name": "MambaSpec",
+          "line": 1035
+        },
+        {
+          "name": "get_mamba_prefill_checkpoint_position",
+          "line": 1110
+        },
+        {
+          "name": "is_mamba_prefill_checkpoint_valid",
+          "line": 1125
+        },
+        {
+          "name": "EncoderOnlyAttentionSpec",
+          "line": 1150
+        },
+        {
+          "name": "CrossAttentionSpec",
+          "line": 1157
+        },
+        {
+          "name": "SinkFullAttentionSpec",
+          "line": 1168
+        },
+        {
+          "name": "UniformTypeKVCacheSpecs",
+          "line": 1225
+        },
+        {
+          "name": "iter_layer_specs",
+          "line": 1326
+        },
+        {
+          "name": "is_full_attention_spec",
+          "line": 1338
+        },
+        {
+          "name": "get_kv_cache_spec_kind",
+          "line": 1355
+        },
+        {
+          "name": "get_kv_cache_spec_sliding_window",
+          "line": 1396
+        },
+        {
+          "name": "KVCacheTensor",
+          "line": 1409
+        },
+        {
+          "name": "KVCacheGroupRole",
+          "line": 1432
+        },
+        {
+          "name": "KVCacheGroupSpec",
+          "line": 1439
+        },
+        {
+          "name": "KVCacheConfig",
+          "line": 1460
+        },
+        {
+          "name": "is_per_token_head",
+          "line": 62
+        },
+        {
+          "name": "is_nvfp4",
+          "line": 71
+        },
+        {
+          "name": "is_turboquant",
+          "line": 76
+        },
+        {
+          "name": "is_ultraquant",
+          "line": 86
+        },
+        {
+          "name": "__post_init__",
+          "line": 178
+        },
+        {
+          "name": "get_block_stride_alignment",
+          "line": 183
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 196
+        },
+        {
+          "name": "prefix_replay_tokens",
+          "line": 201
+        },
+        {
+          "name": "num_heads",
+          "line": 206
+        },
+        {
+          "name": "tokens_per_state",
+          "line": 210
+        },
+        {
+          "name": "state_content_size_bytes",
+          "line": 214
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 218
+        },
+        {
+          "name": "num_states",
+          "line": 228
+        },
+        {
+          "name": "get_num_kernel_states",
+          "line": 231
+        },
+        {
+          "name": "block_table_token_alignment",
+          "line": 237
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 240
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 249
+        },
+        {
+          "name": "copy_with_new_block_size",
+          "line": 261
+        },
+        {
+          "name": "merge",
+          "line": 266
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 274
+        },
+        {
+          "name": "has_layer_views",
+          "line": 288
+        },
+        {
+          "name": "uses_slot_mapping",
+          "line": 298
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 452
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 456
+        },
+        {
+          "name": "block_table_token_alignment",
+          "line": 460
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 463
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 466
+        },
+        {
+          "name": "has_layer_views",
+          "line": 470
+        },
+        {
+          "name": "uses_slot_mapping",
+          "line": 474
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 485
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 489
+        },
+        {
+          "name": "max_admission_blocks_per_request",
+          "line": 492
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 498
+        },
+        {
+          "name": "has_layer_views",
+          "line": 506
+        },
+        {
+          "name": "__post_init__",
+          "line": 533
+        },
+        {
+          "name": "num_heads",
+          "line": 539
+        },
+        {
+          "name": "state_content_size_bytes",
+          "line": 545
+        },
+        {
+          "name": "unpadded_page_size_bytes",
+          "line": 552
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 556
+        },
+        {
+          "name": "real_page_size_bytes",
+          "line": 563
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 569
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 602
+        },
+        {
+          "name": "merge_window_sizes",
+          "line": 610
+        },
+        {
+          "name": "merge",
+          "line": 622
+        },
+        {
+          "name": "__post_init__",
+          "line": 700
+        },
+        {
+          "name": "merge",
+          "line": 705
+        },
+        {
+          "name": "merge",
+          "line": 778
+        },
+        {
+          "name": "max_admission_blocks_per_request",
+          "line": 813
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 832
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 839
+        },
+        {
+          "name": "max_admission_blocks_per_request",
+          "line": 859
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 887
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 898
+        },
+        {
+          "name": "block_table_token_alignment",
+          "line": 920
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 923
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 928
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 932
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 940
+        },
+        {
+          "name": "uses_slot_mapping",
+          "line": 944
+        },
+        {
+          "name": "__post_init__",
+          "line": 961
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 969
+        },
+        {
+          "name": "prefix_replay_tokens",
+          "line": 973
+        },
+        {
+          "name": "merge",
+          "line": 977
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 1023
+        },
+        {
+          "name": "state_content_size_bytes",
+          "line": 1051
+        },
+        {
+          "name": "real_page_size_bytes",
+          "line": 1058
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 1062
+        },
+        {
+          "name": "block_table_token_alignment",
+          "line": 1073
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 1076
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 1084
+        },
+        {
+          "name": "is_uniform_with_collection",
+          "line": 1096
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 1151
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 1160
+        },
+        {
+          "name": "merge",
+          "line": 1172
+        },
+        {
+          "name": "__post_init__",
+          "line": 1234
+        },
+        {
+          "name": "prefix_cacheable",
+          "line": 1240
+        },
+        {
+          "name": "prefix_replay_tokens",
+          "line": 1244
+        },
+        {
+          "name": "first_spec",
+          "line": 1248
+        },
+        {
+          "name": "page_size_bytes",
+          "line": 1253
+        },
+        {
+          "name": "block_table_token_alignment",
+          "line": 1257
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 1260
+        },
+        {
+          "name": "max_num_blocks_per_req",
+          "line": 1267
+        },
+        {
+          "name": "is_uniform_type",
+          "line": 1282
+        },
+        {
+          "name": "from_specs",
+          "line": 1298
+        },
+        {
+          "name": "get_max_layers_per_page_size",
+          "line": 1308
+        },
+        {
+          "name": "max_memory_usage_pages",
+          "line": 1315
+        },
+        {
+          "name": "uses_slot_mapping",
+          "line": 1322
+        },
+        {
+          "name": "transfer_group_ids",
+          "line": 1496
+        },
+        {
+          "name": "prefix_cacheable_group_ids",
+          "line": 1505
+        },
+        {
+          "name": "prefix_cacheable_groups",
+          "line": 1514
+        },
+        {
+          "name": "transfer_groups",
+          "line": 1522
+        },
+        {
+          "name": "transfer_group_index_by_layer",
+          "line": 1529
+        },
+        {
+          "name": "select_transfer_block_ids",
+          "line": 1537
+        },
+        {
+          "name": "host_group_ids",
+          "line": 1549
+        },
+        {
+          "name": "num_blocks_of",
+          "line": 1556
+        },
+        {
+          "name": "has_mamba_layers",
+          "line": 1564
+        },
+        {
+          "name": "has_mixed_precision_kv_cache",
+          "line": 1572
+        },
+        {
+          "name": "needs_kv_cache_zeroing",
+          "line": 1586
+        }
+      ]
+    },
+    "v1/attention/backends/turboquant_attn.py": {
+      "sha256": "f6968973d56fd1b3451a1974d49e091e8cd1f2280631161a010578a9d3631a00",
+      "symbols": [
+        {
+          "name": "_soa_imports",
+          "line": 88
+        },
+        {
+          "name": "_build_hadamard",
+          "line": 106
+        },
+        {
+          "name": "_build_hadamard_cached",
+          "line": 117
+        },
+        {
+          "name": "TurboQuantAttentionBackend",
+          "line": 124
+        },
+        {
+          "name": "TurboQuantMetadata",
+          "line": 208
+        },
+        {
+          "name": "TurboQuantMetadataBuilder",
+          "line": 229
+        },
+        {
+          "name": "TurboQuantAttentionImpl",
+          "line": 324
+        },
+        {
+          "name": "customize_spec",
+          "line": 142
+        },
+        {
+          "name": "get_name",
+          "line": 157
+        },
+        {
+          "name": "supported_kv_cache_layouts",
+          "line": 161
+        },
+        {
+          "name": "get_supported_kernel_block_sizes",
+          "line": 167
+        },
+        {
+          "name": "supports_mm_prefix",
+          "line": 171
+        },
+        {
+          "name": "supports_sliding_window",
+          "line": 175
+        },
+        {
+          "name": "supports_attn_type",
+          "line": 179
+        },
+        {
+          "name": "supports_per_head_quant_scales",
+          "line": 183
+        },
+        {
+          "name": "get_impl_cls",
+          "line": 187
+        },
+        {
+          "name": "get_builder_cls",
+          "line": 191
+        },
+        {
+          "name": "supports_kv_cache_dtype",
+          "line": 195
+        },
+        {
+          "name": "supports_head_size",
+          "line": 201
+        },
+        {
+          "name": "__init__",
+          "line": 235
+        },
+        {
+          "name": "_reserve_workspace",
+          "line": 240
+        },
+        {
+          "name": "build_for_cudagraph_capture",
+          "line": 280
+        },
+        {
+          "name": "build",
+          "line": 289
+        },
+        {
+          "name": "__init__",
+          "line": 337
+        },
+        {
+          "name": "_flash_attn_varlen",
+          "line": 398
+        },
+        {
+          "name": "_ensure_on_device",
+          "line": 435
+        },
+        {
+          "name": "_max_capture_batch_size",
+          "line": 501
+        },
+        {
+          "name": "do_kv_cache_update",
+          "line": 524
+        },
+        {
+          "name": "forward",
+          "line": 551
+        },
+        {
+          "name": "_store_kv",
+          "line": 732
+        },
+        {
+          "name": "_prefill_attention",
+          "line": 778
+        },
+        {
+          "name": "_continuation_prefill",
+          "line": 962
+        },
+        {
+          "name": "_decode_attention",
+          "line": 1156
+        },
+        {
+          "name": "_dispatch_decode_soa",
+          "line": 1282
+        }
+      ]
+    },
+    "v1/attention/ops/turboquant_soa/triton_turboquant_store.py": {
+      "sha256": "3e0e0a12b8005995eb737a49db78e3780ab1763e55201f8e559ce409603557a2",
+      "symbols": [
+        {
+          "name": "_store_quantized_value",
+          "line": 27
+        },
+        {
+          "name": "_tq_fused_store_fp8",
+          "line": 125
+        },
+        {
+          "name": "_tq_fused_store_mse",
+          "line": 224
+        },
+        {
+          "name": "triton_turboquant_store",
+          "line": 381
+        }
+      ]
+    },
+    "v1/attention/ops/turboquant_soa/triton_turboquant_unified_attention.py": {
+      "sha256": "103ae7cf290748c34253f7caab39aacfc8b8d35caf37e863d4217a81143dfe39",
+      "symbols": [
+        {
+          "name": "_find_seq_idx",
+          "line": 56
+        },
+        {
+          "name": "_tq_fuse_q_rotation",
+          "line": 91
+        },
+        {
+          "name": "_tq_load_k_tile",
+          "line": 130
+        },
+        {
+          "name": "_tq_load_v_tile",
+          "line": 259
+        },
+        {
+          "name": "kernel_tq_unified_attention_2d",
+          "line": 334
+        },
+        {
+          "name": "kernel_tq_unified_attention_3d",
+          "line": 605
+        },
+        {
+          "name": "_get_layout",
+          "line": 871
+        },
+        {
+          "name": "_get_pair_lut",
+          "line": 884
+        },
+        {
+          "name": "triton_turboquant_unified_attention",
+          "line": 897
+        },
+        {
+          "name": "triton_turboquant_decode_attention_soa",
+          "line": 1319
+        }
+      ]
+    },
+    "v1/core/block_pool.py": {
+      "sha256": "6d1e0d89b43e3b2ae396906b9c2f0551dbe192b60d05f8c1ca2d93a91bbbeea3",
+      "symbols": [
+        {
+          "name": "BlockHashToBlockMap",
+          "line": 35
+        },
+        {
+          "name": "BlockPool",
+          "line": 136
+        },
+        {
+          "name": "__init__",
+          "line": 57
+        },
+        {
+          "name": "get_one_block",
+          "line": 62
+        },
+        {
+          "name": "contain",
+          "line": 73
+        },
+        {
+          "name": "insert",
+          "line": 85
+        },
+        {
+          "name": "pop",
+          "line": 101
+        },
+        {
+          "name": "__len__",
+          "line": 129
+        },
+        {
+          "name": "_unexpected_blocks_type",
+          "line": 132
+        },
+        {
+          "name": "__init__",
+          "line": 157
+        },
+        {
+          "name": "get_cached_block",
+          "line": 198
+        },
+        {
+          "name": "cache_full_blocks",
+          "line": 226
+        },
+        {
+          "name": "_build_block_stored_event",
+          "line": 346
+        },
+        {
+          "name": "emit_cached_block_events",
+          "line": 376
+        },
+        {
+          "name": "cache_partial_block",
+          "line": 449
+        },
+        {
+          "name": "_get_partial_block_hash",
+          "line": 565
+        },
+        {
+          "name": "_get_partial_block_parent_hash_and_start",
+          "line": 578
+        },
+        {
+          "name": "_remove_cached_block_hashes",
+          "line": 590
+        },
+        {
+          "name": "_emit_block_removed_events",
+          "line": 611
+        },
+        {
+          "name": "_insert_block_hash",
+          "line": 626
+        },
+        {
+          "name": "move_block_hashes",
+          "line": 648
+        },
+        {
+          "name": "get_new_blocks",
+          "line": 666
+        },
+        {
+          "name": "_notify_reuse",
+          "line": 702
+        },
+        {
+          "name": "unpin_blocks",
+          "line": 708
+        },
+        {
+          "name": "_maybe_evict_cached_block",
+          "line": 729
+        },
+        {
+          "name": "touch",
+          "line": 752
+        },
+        {
+          "name": "is_block_writable",
+          "line": 770
+        },
+        {
+          "name": "free_blocks",
+          "line": 774
+        },
+        {
+          "name": "evict_blocks",
+          "line": 807
+        },
+        {
+          "name": "reset_prefix_cache",
+          "line": 827
+        },
+        {
+          "name": "get_num_free_blocks",
+          "line": 868
+        },
+        {
+          "name": "get_usage",
+          "line": 877
+        },
+        {
+          "name": "take_events",
+          "line": 890
+        }
+      ]
+    },
+    "v1/core/kv_cache_manager.py": {
+      "sha256": "d08315437c6b07040d1b7e12d7bd7d6e966c976a286f05a9788098cfdd9754c7",
+      "symbols": [
+        {
+          "name": "KVCacheBlocks",
+          "line": 35
+        },
+        {
+          "name": "KVCacheManager",
+          "line": 131
+        },
+        {
+          "name": "__add__",
+          "line": 56
+        },
+        {
+          "name": "get_block_ids",
+          "line": 66
+        },
+        {
+          "name": "get_block_ids",
+          "line": 74
+        },
+        {
+          "name": "get_block_ids",
+          "line": 81
+        },
+        {
+          "name": "get_unhashed_block_ids",
+          "line": 109
+        },
+        {
+          "name": "get_unhashed_block_ids_all_groups",
+          "line": 114
+        },
+        {
+          "name": "new_empty",
+          "line": 126
+        },
+        {
+          "name": "__init__",
+          "line": 132
+        },
+        {
+          "name": "usage",
+          "line": 227
+        },
+        {
+          "name": "make_prefix_cache_stats",
+          "line": 236
+        },
+        {
+          "name": "prefix_cache_lookup_enabled",
+          "line": 249
+        },
+        {
+          "name": "record_prefix_cache_stats",
+          "line": 253
+        },
+        {
+          "name": "get_computed_blocks",
+          "line": 264
+        },
+        {
+          "name": "get_computed_blocks_for_connector",
+          "line": 323
+        },
+        {
+          "name": "allocate_slots",
+          "line": 371
+        },
+        {
+          "name": "free",
+          "line": 620
+        },
+        {
+          "name": "remove_skipped_blocks",
+          "line": 631
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 651
+        },
+        {
+          "name": "evict_blocks",
+          "line": 665
+        },
+        {
+          "name": "reset_prefix_cache",
+          "line": 674
+        },
+        {
+          "name": "get_num_common_prefix_blocks",
+          "line": 691
+        },
+        {
+          "name": "take_events",
+          "line": 696
+        },
+        {
+          "name": "get_blocks",
+          "line": 723
+        },
+        {
+          "name": "get_block_ids",
+          "line": 727
+        },
+        {
+          "name": "get_block_ids_for_computed_tokens",
+          "line": 731
+        },
+        {
+          "name": "estimate_cached_tokens",
+          "line": 751
+        },
+        {
+          "name": "cache_blocks",
+          "line": 782
+        },
+        {
+          "name": "create_kv_cache_blocks",
+          "line": 794
+        },
+        {
+          "name": "truncate_computed_blocks",
+          "line": 800
+        },
+        {
+          "name": "take_new_block_ids",
+          "line": 833
+        },
+        {
+          "name": "record_blocks_for_zeroing",
+          "line": 840
+        },
+        {
+          "name": "take_kv_cache_block_copies",
+          "line": 854
+        },
+        {
+          "name": "take_boundary_state_offloads",
+          "line": 871
+        },
+        {
+          "name": "finalize_partial_tail_offloads",
+          "line": 897
+        },
+        {
+          "name": "new_step_starts",
+          "line": 920
+        }
+      ]
+    },
+    "v1/core/single_type_kv_cache_manager.py": {
+      "sha256": "fe38816a388bb5b615231f621adc208e3893d20349865d041cc4f646d4d89b0a",
+      "symbols": [
+        {
+          "name": "SingleTypeKVCacheManager",
+          "line": 48
+        },
+        {
+          "name": "FullAttentionManager",
+          "line": 729
+        },
+        {
+          "name": "RSWAManager",
+          "line": 887
+        },
+        {
+          "name": "SlidingWindowManager",
+          "line": 933
+        },
+        {
+          "name": "CircularBufferManager",
+          "line": 1173
+        },
+        {
+          "name": "ChunkedLocalAttentionManager",
+          "line": 1263
+        },
+        {
+          "name": "MambaManager",
+          "line": 1415
+        },
+        {
+          "name": "CrossAttentionManager",
+          "line": 2115
+        },
+        {
+          "name": "SinkFullAttentionManager",
+          "line": 2176
+        },
+        {
+          "name": "HiSparseSourceManager",
+          "line": 2200
+        },
+        {
+          "name": "_HiSparseAuxiliaryManager",
+          "line": 2333
+        },
+        {
+          "name": "HiSparseHotManager",
+          "line": 2364
+        },
+        {
+          "name": "HiSparseResidentManager",
+          "line": 2449
+        },
+        {
+          "name": "get_manager_for_kv_cache_spec",
+          "line": 2585
+        },
+        {
+          "name": "register_all_kvcache_specs",
+          "line": 2633
+        },
+        {
+          "name": "has_positionally_stable_blocks",
+          "line": 59
+        },
+        {
+          "name": "__init__",
+          "line": 68
+        },
+        {
+          "name": "_get_num_evictable_blocks",
+          "line": 160
+        },
+        {
+          "name": "_has_partial_local_hit",
+          "line": 163
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 175
+        },
+        {
+          "name": "add_local_computed_blocks",
+          "line": 267
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 326
+        },
+        {
+          "name": "allocate_new_blocks",
+          "line": 369
+        },
+        {
+          "name": "records_new_block_ids",
+          "line": 412
+        },
+        {
+          "name": "take_new_block_ids",
+          "line": 416
+        },
+        {
+          "name": "take_pending_cow_copies",
+          "line": 422
+        },
+        {
+          "name": "take_pending_boundary_state_offloads",
+          "line": 430
+        },
+        {
+          "name": "finalize_partial_tail_offload",
+          "line": 445
+        },
+        {
+          "name": "_apply_cow",
+          "line": 454
+        },
+        {
+          "name": "cache_blocks",
+          "line": 476
+        },
+        {
+          "name": "reachable_block_mask",
+          "line": 536
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 562
+        },
+        {
+          "name": "free",
+          "line": 581
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 593
+        },
+        {
+          "name": "_remove_blocks_in_range",
+          "line": 645
+        },
+        {
+          "name": "remove_skipped_blocks",
+          "line": 672
+        },
+        {
+          "name": "get_num_skipped_tokens",
+          "line": 712
+        },
+        {
+          "name": "new_step_starts",
+          "line": 725
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 733
+        },
+        {
+          "name": "cache_blocks",
+          "line": 830
+        },
+        {
+          "name": "_cache_partial_tail_block",
+          "line": 849
+        },
+        {
+          "name": "__init__",
+          "line": 896
+        },
+        {
+          "name": "remove_skipped_blocks",
+          "line": 900
+        },
+        {
+          "name": "__init__",
+          "line": 934
+        },
+        {
+          "name": "_contiguous_blocks_for_hit",
+          "line": 943
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 956
+        },
+        {
+          "name": "reachable_block_mask",
+          "line": 1054
+        },
+        {
+          "name": "get_num_skipped_tokens",
+          "line": 1135
+        },
+        {
+          "name": "_claim_ring_block",
+          "line": 1178
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 1190
+        },
+        {
+          "name": "allocate_new_blocks",
+          "line": 1203
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 1208
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 1218
+        },
+        {
+          "name": "cache_blocks",
+          "line": 1232
+        },
+        {
+          "name": "add_local_computed_blocks",
+          "line": 1242
+        },
+        {
+          "name": "remove_skipped_blocks",
+          "line": 1251
+        },
+        {
+          "name": "get_num_skipped_tokens",
+          "line": 1259
+        },
+        {
+          "name": "__init__",
+          "line": 1264
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 1269
+        },
+        {
+          "name": "get_num_skipped_tokens",
+          "line": 1368
+        },
+        {
+          "name": "has_positionally_stable_blocks",
+          "line": 1419
+        },
+        {
+          "name": "__init__",
+          "line": 1424
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 1454
+        },
+        {
+          "name": "reachable_block_mask",
+          "line": 1533
+        },
+        {
+          "name": "_remove_blocks_in_range",
+          "line": 1592
+        },
+        {
+          "name": "remove_skipped_blocks",
+          "line": 1613
+        },
+        {
+          "name": "_needs_internal_checkpoint",
+          "line": 1643
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 1676
+        },
+        {
+          "name": "allocate_new_blocks",
+          "line": 1780
+        },
+        {
+          "name": "_relocate_speculative_block",
+          "line": 1908
+        },
+        {
+          "name": "finalize_partial_tail_offload",
+          "line": 1919
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 1935
+        },
+        {
+          "name": "get_num_skipped_tokens",
+          "line": 1954
+        },
+        {
+          "name": "cache_blocks",
+          "line": 1961
+        },
+        {
+          "name": "new_step_starts",
+          "line": 2008
+        },
+        {
+          "name": "_cache_partial_tail_block",
+          "line": 2011
+        },
+        {
+          "name": "add_local_computed_blocks",
+          "line": 2118
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 2129
+        },
+        {
+          "name": "cache_blocks",
+          "line": 2139
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 2152
+        },
+        {
+          "name": "__init__",
+          "line": 2177
+        },
+        {
+          "name": "records_new_block_ids",
+          "line": 2212
+        },
+        {
+          "name": "take_new_block_ids",
+          "line": 2215
+        },
+        {
+          "name": "bind_host_pool",
+          "line": 2219
+        },
+        {
+          "name": "take_pending_cow_copies",
+          "line": 2237
+        },
+        {
+          "name": "take_host_cow_copies",
+          "line": 2241
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 2247
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 2274
+        },
+        {
+          "name": "cache_blocks",
+          "line": 2296
+        },
+        {
+          "name": "publish_blocks",
+          "line": 2312
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 2327
+        },
+        {
+          "name": "cache_blocks",
+          "line": 2338
+        },
+        {
+          "name": "find_longest_cache_hit",
+          "line": 2349
+        },
+        {
+          "name": "__init__",
+          "line": 2367
+        },
+        {
+          "name": "require_hot",
+          "line": 2372
+        },
+        {
+          "name": "has_hot",
+          "line": 2375
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 2378
+        },
+        {
+          "name": "get_num_required_blocks",
+          "line": 2401
+        },
+        {
+          "name": "add_local_computed_blocks",
+          "line": 2407
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 2420
+        },
+        {
+          "name": "allocate_new_blocks",
+          "line": 2429
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 2444
+        },
+        {
+          "name": "__init__",
+          "line": 2454
+        },
+        {
+          "name": "get_num_blocks_to_allocate",
+          "line": 2458
+        },
+        {
+          "name": "allocate_external_computed_blocks",
+          "line": 2487
+        },
+        {
+          "name": "add_local_computed_blocks",
+          "line": 2504
+        },
+        {
+          "name": "allocate_new_blocks",
+          "line": 2520
+        },
+        {
+          "name": "pop_blocks_for_free",
+          "line": 2532
+        },
+        {
+          "name": "adopt_resident_page",
+          "line": 2540
+        },
+        {
+          "name": "drop_resident_page",
+          "line": 2552
+        },
+        {
+          "name": "get_resident_page",
+          "line": 2562
+        },
+        {
+          "name": "get_residency_row",
+          "line": 2572
+        }
+      ]
+    },
+    "v1/core/kv_cache_utils.py": {
+      "sha256": "6645ee0473b19921679e028ca12ad4f839511af1159e540f4a8971f755a7ec3c",
+      "symbols": [
+        {
+          "name": "make_block_hash_with_group_id",
+          "line": 74
+        },
+        {
+          "name": "get_block_hash",
+          "line": 86
+        },
+        {
+          "name": "get_group_id",
+          "line": 91
+        },
+        {
+          "name": "maybe_convert_block_hash",
+          "line": 96
+        },
+        {
+          "name": "resolve_none_hash_seed",
+          "line": 131
+        },
+        {
+          "name": "get_none_hash_seed",
+          "line": 147
+        },
+        {
+          "name": "init_none_hash",
+          "line": 160
+        },
+        {
+          "name": "KVCacheBlock",
+          "line": 176
+        },
+        {
+          "name": "KVCacheBlockCopy",
+          "line": 241
+        },
+        {
+          "name": "FreeKVCacheBlockQueue",
+          "line": 246
+        },
+        {
+          "name": "_gen_mm_extra_hash_keys",
+          "line": 510
+        },
+        {
+          "name": "_gen_lora_extra_hash_keys",
+          "line": 578
+        },
+        {
+          "name": "_gen_prompt_embeds_extra_hash_keys",
+          "line": 598
+        },
+        {
+          "name": "generate_block_hash_extra_keys",
+          "line": 625
+        },
+        {
+          "name": "to_event_extra_keys",
+          "line": 666
+        },
+        {
+          "name": "hash_block_tokens",
+          "line": 695
+        },
+        {
+          "name": "resolve_dcp_kv_block_size",
+          "line": 728
+        },
+        {
+          "name": "resolve_dcp_kv_cache_spec",
+          "line": 733
+        },
+        {
+          "name": "partial_hash_hits_enabled",
+          "line": 750
+        },
+        {
+          "name": "eagle_proof_margin",
+          "line": 792
+        },
+        {
+          "name": "resolve_kv_cache_block_sizes",
+          "line": 804
+        },
+        {
+          "name": "resolve_cache_hit_alignment_tokens",
+          "line": 909
+        },
+        {
+          "name": "get_request_block_hasher",
+          "line": 941
+        },
+        {
+          "name": "_check_enough_kv_cache_memory",
+          "line": 1003
+        },
+        {
+          "name": "max_memory_usage_bytes",
+          "line": 1043
+        },
+        {
+          "name": "estimate_max_model_len",
+          "line": 1050
+        },
+        {
+          "name": "check_enough_kv_cache_memory",
+          "line": 1104
+        },
+        {
+          "name": "create_kv_cache_group_specs",
+          "line": 1140
+        },
+        {
+          "name": "is_kv_cache_spec_uniform",
+          "line": 1171
+        },
+        {
+          "name": "get_max_concurrency_for_kv_cache_config",
+          "line": 1195
+        },
+        {
+          "name": "may_override_num_blocks",
+          "line": 1230
+        },
+        {
+          "name": "_pool_bytes_per_block",
+          "line": 1239
+        },
+        {
+          "name": "get_uniform_page_size",
+          "line": 1253
+        },
+        {
+          "name": "_get_kv_cache_groups_uniform_spec",
+          "line": 1260
+        },
+        {
+          "name": "_get_kv_cache_groups_uniform_type",
+          "line": 1276
+        },
+        {
+          "name": "unify_kv_cache_spec_page_size",
+          "line": 1292
+        },
+        {
+          "name": "is_kv_cache_type_attention_free",
+          "line": 1357
+        },
+        {
+          "name": "_get_kv_cache_groups_uniform_page_size",
+          "line": 1362
+        },
+        {
+          "name": "_get_per_layer_spec",
+          "line": 1505
+        },
+        {
+          "name": "_get_layer_block_stride",
+          "line": 1515
+        },
+        {
+          "name": "_get_kv_cache_bytes_per_block",
+          "line": 1520
+        },
+        {
+          "name": "validate_kv_cache_layout",
+          "line": 1554
+        },
+        {
+          "name": "get_kv_cache_config_from_groups",
+          "line": 1588
+        },
+        {
+          "name": "_promote_local_kv_cache_specs",
+          "line": 1690
+        },
+        {
+          "name": "_try_get_full_allocation_fallback_groups",
+          "line": 1765
+        },
+        {
+          "name": "unify_hybrid_kv_cache_specs",
+          "line": 1799
+        },
+        {
+          "name": "_approximate_gcd",
+          "line": 1825
+        },
+        {
+          "name": "_get_packed_kv_cache_groups",
+          "line": 1860
+        },
+        {
+          "name": "_uses_trailing_mtp_layers",
+          "line": 2023
+        },
+        {
+          "name": "_groups_partition_layers_exactly",
+          "line": 2042
+        },
+        {
+          "name": "_annotate_eagle_groups",
+          "line": 2055
+        },
+        {
+          "name": "_warn_if_unannotated_eagle_mamba",
+          "line": 2113
+        },
+        {
+          "name": "_largest_divisor_at_most",
+          "line": 2146
+        },
+        {
+          "name": "_ensure_min_page_size",
+          "line": 2153
+        },
+        {
+          "name": "get_kv_cache_groups",
+          "line": 2185
+        },
+        {
+          "name": "_layer_tp_replicas",
+          "line": 2282
+        },
+        {
+          "name": "kv_cache_groups_tp_replicas",
+          "line": 2290
+        },
+        {
+          "name": "generate_scheduler_kv_cache_config",
+          "line": 2302
+        },
+        {
+          "name": "get_kv_cache_capacity",
+          "line": 2326
+        },
+        {
+          "name": "_kv_cache_device_name",
+          "line": 2337
+        },
+        {
+          "name": "update_kv_cache_capacity",
+          "line": 2342
+        },
+        {
+          "name": "_max_memory_usage_bytes_from_groups",
+          "line": 2363
+        },
+        {
+          "name": "_estimate_max_model_len_from_groups",
+          "line": 2395
+        },
+        {
+          "name": "_auto_fit_max_model_len",
+          "line": 2440
+        },
+        {
+          "name": "_project_kv_cache_groups_to_worker",
+          "line": 2512
+        },
+        {
+          "name": "get_kv_cache_configs",
+          "line": 2557
+        },
+        {
+          "name": "BlockHashListWithBlockSize",
+          "line": 2716
+        },
+        {
+          "name": "resolve_block_hashes",
+          "line": 2792
+        },
+        {
+          "name": "block_hash",
+          "line": 203
+        },
+        {
+          "name": "block_hash_num_tokens",
+          "line": 207
+        },
+        {
+          "name": "set_block_hash",
+          "line": 210
+        },
+        {
+          "name": "reset_hash",
+          "line": 221
+        },
+        {
+          "name": "__repr__",
+          "line": 226
+        },
+        {
+          "name": "__init__",
+          "line": 269
+        },
+        {
+          "name": "popleft",
+          "line": 299
+        },
+        {
+          "name": "popleft_n",
+          "line": 335
+        },
+        {
+          "name": "remove",
+          "line": 379
+        },
+        {
+          "name": "append",
+          "line": 402
+        },
+        {
+          "name": "prepend_n",
+          "line": 426
+        },
+        {
+          "name": "append_n",
+          "line": 447
+        },
+        {
+          "name": "get_all_free_blocks",
+          "line": 474
+        },
+        {
+          "name": "iter_blocks_after",
+          "line": 495
+        },
+        {
+          "name": "request_block_hasher",
+          "line": 954
+        },
+        {
+          "name": "fits_in_memory",
+          "line": 1074
+        },
+        {
+          "name": "promoted_page_size_padded",
+          "line": 1723
+        },
+        {
+          "name": "num_groups_for",
+          "line": 1927
+        },
+        {
+          "name": "widest_group_bytes",
+          "line": 1932
+        },
+        {
+          "name": "is_state_bucket",
+          "line": 1941
+        },
+        {
+          "name": "fits",
+          "line": 2409
+        },
+        {
+          "name": "__init__",
+          "line": 2750
+        },
+        {
+          "name": "__len__",
+          "line": 2760
+        },
+        {
+          "name": "__getitem__",
+          "line": 2764
+        },
+        {
+          "name": "__getitem__",
+          "line": 2767
+        },
+        {
+          "name": "__getitem__",
+          "line": 2769
+        },
+        {
+          "name": "__iter__",
+          "line": 2779
+        },
+        {
+          "name": "_get_value_at",
+          "line": 2783
+        }
+      ]
+    },
+    "v1/worker/block_table.py": {
+      "sha256": "4068aea7336627f809def92f45401659d7c7c592d4da5dace6a11c90e7850c4a",
+      "symbols": [
+        {
+          "name": "get_block_table_width",
+          "line": 29
+        },
+        {
+          "name": "SlotMappingMode",
+          "line": 44
+        },
+        {
+          "name": "BlockTable",
+          "line": 49
+        },
+        {
+          "name": "MultiGroupBlockTable",
+          "line": 208
+        },
+        {
+          "name": "ComputeSlotMappingKernel",
+          "line": 305
+        },
+        {
+          "name": "__init__",
+          "line": 50
+        },
+        {
+          "name": "append_row",
+          "line": 114
+        },
+        {
+          "name": "add_row",
+          "line": 127
+        },
+        {
+          "name": "clear_row",
+          "line": 131
+        },
+        {
+          "name": "move_row",
+          "line": 137
+        },
+        {
+          "name": "swap_row",
+          "line": 148
+        },
+        {
+          "name": "compute_slot_mapping",
+          "line": 153
+        },
+        {
+          "name": "commit_block_table",
+          "line": 181
+        },
+        {
+          "name": "clear",
+          "line": 184
+        },
+        {
+          "name": "get_device_tensor",
+          "line": 188
+        },
+        {
+          "name": "get_cpu_tensor",
+          "line": 192
+        },
+        {
+          "name": "get_numpy_array",
+          "line": 196
+        },
+        {
+          "name": "_make_buffer",
+          "line": 200
+        },
+        {
+          "name": "__init__",
+          "line": 211
+        },
+        {
+          "name": "append_row",
+          "line": 263
+        },
+        {
+          "name": "add_row",
+          "line": 267
+        },
+        {
+          "name": "clear_row",
+          "line": 271
+        },
+        {
+          "name": "move_row",
+          "line": 275
+        },
+        {
+          "name": "swap_row",
+          "line": 279
+        },
+        {
+          "name": "compute_slot_mapping",
+          "line": 283
+        },
+        {
+          "name": "commit_block_table",
+          "line": 292
+        },
+        {
+          "name": "clear",
+          "line": 296
+        },
+        {
+          "name": "__getitem__",
+          "line": 300
+        },
+        {
+          "name": "CompileKey",
+          "line": 311
+        },
+        {
+          "name": "kernel",
+          "line": 320
+        },
+        {
+          "name": "dispatch",
+          "line": 378
+        },
+        {
+          "name": "get_warmup_keys",
+          "line": 389
+        },
+        {
+          "name": "warmup_inputs",
+          "line": 392
+        },
+        {
+          "name": "__call__",
+          "line": 414
+        }
+      ]
+    },
+    "v1/worker/gpu_model_runner.py": {
+      "sha256": "4cf95efe4ea8caa3110dcd231ff95ceb97e8136f5056e6bdd388300a484c4a81",
+      "symbols": [
+        {
+          "name": "count_nans_per_row",
+          "line": 251
+        },
+        {
+          "name": "nans_to_dict",
+          "line": 256
+        },
+        {
+          "name": "AsyncGPUModelRunnerOutput",
+          "line": 269
+        },
+        {
+          "name": "_copy_pooler_output_to_cpu",
+          "line": 367
+        },
+        {
+          "name": "AsyncGPUPoolingModelRunnerOutput",
+          "line": 412
+        },
+        {
+          "name": "ExecuteModelState",
+          "line": 451
+        },
+        {
+          "name": "GPUModelRunner",
+          "line": 467
+        },
+        {
+          "name": "__init__",
+          "line": 270
+        },
+        {
+          "name": "get_output",
+          "line": 318
+        },
+        {
+          "name": "__init__",
+          "line": 413
+        },
+        {
+          "name": "get_output",
+          "line": 440
+        },
+        {
+          "name": "__init__",
+          "line": 471
+        },
+        {
+          "name": "update_max_model_len",
+          "line": 959
+        },
+        {
+          "name": "reset_mm_cache",
+          "line": 966
+        },
+        {
+          "name": "reset_encoder_cache",
+          "line": 974
+        },
+        {
+          "name": "release_late_interaction_query_cache",
+          "line": 983
+        },
+        {
+          "name": "_get_positions",
+          "line": 986
+        },
+        {
+          "name": "_make_buffer",
+          "line": 996
+        },
+        {
+          "name": "_get_mamba_state_copy_funcs",
+          "line": 1006
+        },
+        {
+          "name": "_get_mamba_bufs",
+          "line": 1015
+        },
+        {
+          "name": "_prepare_lookback_token_ids",
+          "line": 1033
+        },
+        {
+          "name": "_init_model_kwargs",
+          "line": 1053
+        },
+        {
+          "name": "_may_reorder_batch",
+          "line": 1101
+        },
+        {
+          "name": "_init_kv_zero_meta",
+          "line": 1126
+        },
+        {
+          "name": "_zero_block_ids",
+          "line": 1140
+        },
+        {
+          "name": "_sync_device",
+          "line": 1146
+        },
+        {
+          "name": "_get_or_create_async_output_copy_stream",
+          "line": 1149
+        },
+        {
+          "name": "_on_request_state_removed",
+          "line": 1156
+        },
+        {
+          "name": "_process_encoder_cache_scheduler_output",
+          "line": 1164
+        },
+        {
+          "name": "_update_states",
+          "line": 1172
+        },
+        {
+          "name": "_update_states_after_model_execute",
+          "line": 1544
+        },
+        {
+          "name": "_update_streaming_request",
+          "line": 1591
+        },
+        {
+          "name": "_init_mrope_positions",
+          "line": 1626
+        },
+        {
+          "name": "_extract_mm_kwargs",
+          "line": 1658
+        },
+        {
+          "name": "_dummy_mm_kwargs",
+          "line": 1682
+        },
+        {
+          "name": "_get_cumsum_and_arange",
+          "line": 1695
+        },
+        {
+          "name": "_compute_prev_positions",
+          "line": 1721
+        },
+        {
+          "name": "_prepare_input_ids",
+          "line": 1736
+        },
+        {
+          "name": "_get_encoder_seq_lens",
+          "line": 1875
+        },
+        {
+          "name": "_prepare_inputs",
+          "line": 1920
+        },
+        {
+          "name": "_build_attention_metadata",
+          "line": 2249
+        },
+        {
+          "name": "_calc_mrope_positions",
+          "line": 2576
+        },
+        {
+          "name": "_calc_spec_decode_metadata",
+          "line": 2625
+        },
+        {
+          "name": "_prepare_kv_sharing_fast_prefill",
+          "line": 2700
+        },
+        {
+          "name": "_batch_mm_inputs_from_scheduler",
+          "line": 2724
+        },
+        {
+          "name": "_cache_encoder_output",
+          "line": 2775
+        },
+        {
+          "name": "_execute_mm_encoder",
+          "line": 2787
+        },
+        {
+          "name": "_get_encoder_output_from_cache",
+          "line": 2996
+        },
+        {
+          "name": "_gather_mm_embeddings",
+          "line": 3001
+        },
+        {
+          "name": "get_model",
+          "line": 3112
+        },
+        {
+          "name": "get_draft_model",
+          "line": 3122
+        },
+        {
+          "name": "get_supported_generation_tasks",
+          "line": 3133
+        },
+        {
+          "name": "get_supported_pooling_tasks",
+          "line": 3151
+        },
+        {
+          "name": "get_supported_tasks",
+          "line": 3158
+        },
+        {
+          "name": "sync_and_gather_intermediate_tensors",
+          "line": 3168
+        },
+        {
+          "name": "eplb_step",
+          "line": 3187
+        },
+        {
+          "name": "setup_eplb_from_mapping",
+          "line": 3200
+        },
+        {
+          "name": "_pool",
+          "line": 3210
+        },
+        {
+          "name": "_prepare_padding_mask",
+          "line": 3273
+        },
+        {
+          "name": "_prepare_mm_inputs",
+          "line": 3281
+        },
+        {
+          "name": "_preprocess",
+          "line": 3292
+        },
+        {
+          "name": "_sample",
+          "line": 3437
+        },
+        {
+          "name": "_bookkeeping_sync",
+          "line": 3468
+        },
+        {
+          "name": "synchronize_input_prep",
+          "line": 3606
+        },
+        {
+          "name": "_model_forward",
+          "line": 3620
+        },
+        {
+          "name": "_is_uniform_decode",
+          "line": 3654
+        },
+        {
+          "name": "_allow_microbatching",
+          "line": 3673
+        },
+        {
+          "name": "_determine_batch_execution_and_padding",
+          "line": 3718
+        },
+        {
+          "name": "_register_layerwise_nvtx_hooks",
+          "line": 3822
+        },
+        {
+          "name": "_get_slot_mappings",
+          "line": 3856
+        },
+        {
+          "name": "_is_all_reqs_chunked_prefill",
+          "line": 3930
+        },
+        {
+          "name": "execute_model",
+          "line": 3940
+        },
+        {
+          "name": "_input_fits_in_drafter",
+          "line": 4288
+        },
+        {
+          "name": "sample_tokens",
+          "line": 4304
+        },
+        {
+          "name": "_pp_broadcast_prev_sampled_token_ids",
+          "line": 4561
+        },
+        {
+          "name": "_pp_receive_prev_sampled_token_ids_to_input_batch",
+          "line": 4578
+        },
+        {
+          "name": "preserve_serving_state",
+          "line": 4611
+        },
+        {
+          "name": "take_draft_token_ids",
+          "line": 4627
+        },
+        {
+          "name": "_copy_draft_token_ids_to_cpu",
+          "line": 4633
+        },
+        {
+          "name": "_get_draft_token_ids_cpu",
+          "line": 4670
+        },
+        {
+          "name": "_copy_valid_sampled_token_count",
+          "line": 4685
+        },
+        {
+          "name": "_get_valid_sampled_token_count",
+          "line": 4707
+        },
+        {
+          "name": "_get_spec_decode_draft_probs",
+          "line": 4719
+        },
+        {
+          "name": "propose_draft_token_ids",
+          "line": 4748
+        },
+        {
+          "name": "load_model",
+          "line": 5028
+        },
+        {
+          "name": "_setup_eagle3_aux_hidden_state_outputs",
+          "line": 5230
+        },
+        {
+          "name": "_get_eagle3_aux_layers_from_config",
+          "line": 5251
+        },
+        {
+          "name": "reload_weights",
+          "line": 5287
+        },
+        {
+          "name": "_get_prompt_logprobs_dict",
+          "line": 5306
+        },
+        {
+          "name": "_get_nans_in_logits",
+          "line": 5415
+        },
+        {
+          "name": "maybe_randomize_inputs",
+          "line": 5434
+        },
+        {
+          "name": "_get_mm_dummy_batch",
+          "line": 5484
+        },
+        {
+          "name": "_dummy_run",
+          "line": 5508
+        },
+        {
+          "name": "_dummy_sampler_run",
+          "line": 5927
+        },
+        {
+          "name": "_dummy_pooler_run_task",
+          "line": 6046
+        },
+        {
+          "name": "_dummy_pooler_run",
+          "line": 6103
+        },
+        {
+          "name": "profile_run",
+          "line": 6133
+        },
+        {
+          "name": "_init_minimal_kv_cache_for_profiling",
+          "line": 6208
+        },
+        {
+          "name": "shutdown",
+          "line": 6238
+        },
+        {
+          "name": "_cleanup_profiling_kv_cache",
+          "line": 6262
+        },
+        {
+          "name": "_create_encoder_cudagraph_manager",
+          "line": 6297
+        },
+        {
+          "name": "_maybe_init_encoder_cudagraph_manager",
+          "line": 6326
+        },
+        {
+          "name": "profile_cudagraph_memory",
+          "line": 6333
+        },
+        {
+          "name": "capture_model",
+          "line": 6482
+        },
+        {
+          "name": "_warmup_and_capture",
+          "line": 6588
+        },
+        {
+          "name": "_capture_cudagraphs",
+          "line": 6636
+        },
+        {
+          "name": "initialize_attn_backend",
+          "line": 6688
+        },
+        {
+          "name": "initialize_metadata_builders",
+          "line": 6793
+        },
+        {
+          "name": "_check_and_update_cudagraph_mode",
+          "line": 6825
+        },
+        {
+          "name": "calculate_reorder_batch_threshold",
+          "line": 6882
+        },
+        {
+          "name": "may_reinitialize_input_batch",
+          "line": 6901
+        },
+        {
+          "name": "_attn_group_iterator",
+          "line": 6970
+        },
+        {
+          "name": "_kv_cache_spec_attn_group_iterator",
+          "line": 6973
+        },
+        {
+          "name": "initialize_kv_cache_tensors",
+          "line": 6979
+        },
+        {
+          "name": "maybe_add_kv_sharing_layers_to_kv_cache_groups",
+          "line": 7028
+        },
+        {
+          "name": "initialize_kv_cache",
+          "line": 7055
+        },
+        {
+          "name": "may_add_encoder_only_layers_to_kv_cache_config",
+          "line": 7122
+        },
+        {
+          "name": "get_kv_cache_spec",
+          "line": 7146
+        },
+        {
+          "name": "_to_list",
+          "line": 7183
+        },
+        {
+          "name": "get_encoder_timing_stats",
+          "line": 7198
+        },
+        {
+          "name": "timed_encoder_operation",
+          "line": 7214
+        },
+        {
+          "name": "_get_block_table",
+          "line": 2290
+        },
+        {
+          "name": "_build_attn_group_metadata",
+          "line": 2447
+        },
+        {
+          "name": "dispatch_cudagraph",
+          "line": 3762
+        },
+        {
+          "name": "_get_slot_mapping",
+          "line": 3887
+        },
+        {
+          "name": "propose_draft_token_ids",
+          "line": 4362
+        },
+        {
+          "name": "AttentionGroupKey",
+          "line": 6696
+        },
+        {
+          "name": "get_attn_backends_for_group",
+          "line": 6713
+        },
+        {
+          "name": "create_attn_groups",
+          "line": 6757
+        },
+        {
+          "name": "correct_spec_decode_token_counts",
+          "line": 1512
+        },
+        {
+          "name": "rand_input_ids",
+          "line": 5457
+        },
+        {
+          "name": "rand_inputs_embeds",
+          "line": 5471
+        }
+      ]
+    },
+    "v1/spec_decode/gemma4.py": {
+      "sha256": "b81daf1a7deb1fbfa2b6e5541c9dc4f0bd1ae485204cbc6ba40a1b0720361732",
+      "symbols": [
+        {
+          "name": "Gemma4Proposer",
+          "line": 33
+        },
+        {
+          "name": "__init__",
+          "line": 34
+        },
+        {
+          "name": "set_per_group_block_table",
+          "line": 63
+        },
+        {
+          "name": "model_returns_tuple",
+          "line": 66
+        },
+        {
+          "name": "build_per_group_and_layer_attn_metadata",
+          "line": 72
+        },
+        {
+          "name": "_greedy_sample",
+          "line": 106
+        },
+        {
+          "name": "_setup_centroids_cuda_graphs",
+          "line": 117
+        },
+        {
+          "name": "_create_draft_vllm_config",
+          "line": 150
+        },
+        {
+          "name": "_maybe_share_embeddings",
+          "line": 171
+        },
+        {
+          "name": "_maybe_share_lm_head",
+          "line": 194
+        },
+        {
+          "name": "load_model",
+          "line": 206
+        },
+        {
+          "name": "validate_same_kv_cache_group",
+          "line": 221
+        },
+        {
+          "name": "initialize_attn_backend",
+          "line": 226
+        },
+        {
+          "name": "_setup_gemma4_kv_sharing",
+          "line": 302
+        }
+      ]
+    }
+  },
+  "weights_digest_verified": false,
+  "live_cache_allocations_observed": false,
+  "gpu_calls": 0,
+  "production_packages_modified": false
+}

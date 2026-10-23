@@ -120,3 +120,29 @@ generation costs are charged separately; shared-host query timings and logical
 KV-size reductions are not physical allocation or production speed claims.
 Next experiments should measure larger tasks and reuse amortization, and connect
 generated summary chunks to the owning bank before any vLLM integration claim.
+
+## 2026-10-23: actual Gemma4/TurboQuant compatibility audit
+
+Read-only inspection of the converted Gemma4-31B config, captured runtime
+metadata, and installed vLLM code establishes the adapter boundary. There are
+50 local-window and 10 global layers with different head dimensions and rotary
+rules; the captured TP2 runtime also protects layers 0, 1, 58, and 59 with BF16
+caches. The other layers use TQ4 SoA packing, including key norm correction
+folded at store time. Final vocabulary-logit softcap 30 is distinct from the
+absent attention softcap.
+
+The portable metadata contract rejects shape-compatible but differently packed
+blocks, wrong model/config/code identities, missing shards, unfinished or
+unpinned pages, unsupported partial blocks, and multimodal spans. Ten CPU tests
+pass. A mathematical check confirms query-side proportional-RoPE shifts remain
+valid for a fixed decoded cache, but must precede the Hadamard transform.
+The tests are synthetic allocation/vector checks, not Gemma model evaluation.
+
+Required serving work includes immutable allocator leases, all-rank/group
+attachment, separate logical and slot positions, local/global masks, MTP
+accepted-state handling, and safe preemption/offload/cancellation. Old local
+pages can already be absent. The current runner and TQ kernels derive masks
+from dense sequence offsets, so removing interior blocks alone is incorrect.
+The full plan and source hashes are in `GEMMA4_ADAPTER.md` and
+`results/gemma4_compatibility/`. No production package, service, or GPU was used
+or changed. The Qwen bank remains the only implemented attention runtime here.

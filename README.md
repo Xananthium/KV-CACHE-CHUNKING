@@ -4,7 +4,9 @@ This directory contains actual CPU experiments on **Qwen2.5-0.5B-Instruct**, not
 
 The initial evidence is mixed: correcting positions made ordinary retrieval reuse work much better; a helpful donor improved two retrieval answers; arbitrary layer mixing made several answers worse. Keeping a useful, explicit conclusion after deleting the reasoning worked in the first branch tests. The tests did **not** show reliable recovery of facts omitted from the retained text.
 
-All results below are a small engineering screen on one pretrained 0.49B model. They do not establish performance on Gemma4-31B, a custom quantized cache, real agent workloads, or long reasoning traces. The arithmetic histories are programmatically checked input traces, not model-generated reasoning.
+All results below are a small engineering screen on one pretrained 0.49B model. They do not establish performance on Gemma4-31B, a custom quantized cache, real agent workloads, or long reasoning traces. The initial arithmetic histories are programmatically checked input traces; the later generated-summary pilot separately evaluates model-generated work and summaries.
+
+A separate [Gemma4/vLLM/TurboQuant compatibility audit](GEMMA4_ADAPTER.md) now documents concrete adapter hooks and correctness blockers. Ten CPU metadata/algebra tests pass; no Gemma GPU inference or serving integration is claimed.
 
 ## What was held fixed
 

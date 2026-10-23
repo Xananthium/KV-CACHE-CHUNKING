@@ -1,0 +1,27 @@
+{
+  "status": "metadata_and_algebra_only",
+  "tests_passed": 10,
+  "runtime_execution_supported": false,
+  "gpu_calls": 0,
+  "model_inference_calls": 0,
+  "math_checks": [
+    {
+      "layer": 2,
+      "head_dim": 256,
+      "correct_order_abs_error": 8.881784197001252e-16,
+      "wrong_order_abs_error": 4.264319490961244
+    },
+    {
+      "layer": 5,
+      "head_dim": 512,
+      "correct_order_abs_error": 1.7763568394002505e-15,
+      "wrong_order_abs_error": 1.2032904420392008
+    }
+  ],
+  "source_sha256": {
+    "gemma4_contract.py": "406a561b51f4bc1521e719c43ee0b55e822959fd445404e64039b84daf5f79ba",
+    "test_gemma4_contract.py": "e5be875e05ecb19c63a0c8d407ce9988dc8435d87f494bcadd05bb7fb785d2c4",
+    "audit_gemma4.py": "c752205c15ef93fb091e0e33ab298c890896a62c6035d5221fad8abacce2a969"
+  },
+  "pilot_generated_summary_unchanged_sha256": "1d1117e4af209832735cf6a7c1793d1196d233f8e2084c4d9b5fa695e7338a53"
+}
