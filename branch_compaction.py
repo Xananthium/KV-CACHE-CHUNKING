@@ -27,7 +27,7 @@ from run_experiment import (MODEL_ID, REVISION, Runner, cache_bytes, cat_cache,
                             ids, layer_errors, prefix, rebase_cache, slice_cache)
 
 
-def make_cases(tokenizer, count, seed):
+def make_cases(tokenizer, count, seed, layout="chat_branch"):
     rng = random.Random(seed)
     cases = []
     names = ["Cedar", "Birch", "Maple", "Willow", "Oak", "Pine"]
@@ -44,6 +44,14 @@ def make_cases(tokenizer, count, seed):
             f"<|im_start|>user\nWe are checking the {name} account. "
             "The work below is an archived reasoning branch.\n"
         )
+        if layout == "chat_branch":
+            shared = (
+                "<|im_start|>system\nYou are a careful archive assistant. "
+                "Answer questions using the available account record. "
+                "When asked for a number, reply with that number only.<|im_end|>\n"
+                f"<|im_start|>user\nReconcile the {name} account using the ledger in your work. "
+                "Save a concise conclusion.<|im_end|>\n<|im_start|>assistant\n"
+            )
         reasoning = (
             "<reasoning>\n"
             f"The {name} account's opening balance is {opening} credits. "
@@ -68,6 +76,10 @@ def make_cases(tokenizer, count, seed):
                 question = f"What is the closing balance of the {name} account?"
             query = (f"\nQuestion: {question}\nReply with the number only."
                      "<|im_end|>\n<|im_start|>assistant\n")
+            if layout == "chat_branch":
+                conclusion += "<|im_end|>\n"
+                query = (f"<|im_start|>user\n{question}\nReply with the number only."
+                         "<|im_end|>\n<|im_start|>assistant\n")
             cases.append({"case_id": f"branch_{index:02d}_{kind}", "kind": kind,
                           "shared_prefix": shared, "reasoning": reasoning,
                           "conclusion": conclusion, "query": query, "gold": gold,
@@ -106,11 +118,12 @@ def main():
     parser.add_argument("--seed", type=int, default=20261024)
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--max-new-tokens", type=int, default=12)
+    parser.add_argument("--layout", choices=["archived", "chat_branch"], default="chat_branch")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     started = time.perf_counter()
     runner = Runner(args)
-    cases = make_cases(runner.tokenizer, args.count, args.seed)
+    cases = make_cases(runner.tokenizer, args.count, args.seed, args.layout)
     (args.output / "cases.json").write_text(json.dumps(cases, indent=2) + "\n")
     (args.output / "branch_compaction.py").write_bytes(Path(__file__).read_bytes())
     (args.output / "run_experiment.py").write_bytes(Path(__file__).with_name("run_experiment.py").read_bytes())

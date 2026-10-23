@@ -1,0 +1,35 @@
+{
+  "actual_qwen_tensor_checks": [
+    {
+      "layer": 0,
+      "mode": "holes",
+      "max_attention_error": 5.960464477539063e-08
+    },
+    {
+      "layer": 0,
+      "mode": "rebase",
+      "max_attention_error": 2.332031726837158e-06
+    },
+    {
+      "layer": 12,
+      "mode": "holes",
+      "max_attention_error": 5.960464477539062e-07
+    },
+    {
+      "layer": 12,
+      "mode": "rebase",
+      "max_attention_error": 9.5367431640625e-07
+    },
+    {
+      "layer": 23,
+      "mode": "holes",
+      "max_attention_error": 1.9073486328125e-06
+    },
+    {
+      "layer": 23,
+      "mode": "rebase",
+      "max_attention_error": 1.430511474609375e-06
+    }
+  ],
+  "status": "PASS"
+}

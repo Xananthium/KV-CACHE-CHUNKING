@@ -1,0 +1,59 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "case_id": "branch_00_complete",
+  "dtype": "float32",
+  "threads": 4,
+  "sharing_five_views": {
+    "chunks": 48,
+    "unique_physical_bytes": 1990656,
+    "referenced_unique_bytes": 1990656,
+    "logical_reference_bytes": 9953280,
+    "avoided_duplicate_bytes": 7962624,
+    "handle_references": 240
+  },
+  "results": [
+    {
+      "mode": "holes",
+      "answer": "260",
+      "gold": "260",
+      "max_logit_error": 2.6702880859375e-05,
+      "per_step_logit_error": [
+        2.6702880859375e-05,
+        1.621246337890625e-05,
+        1.621246337890625e-05,
+        1.621246337890625e-05
+      ],
+      "bank_prefill_ms": 195.7468430045992,
+      "private_tail_bytes": 663552,
+      "bank_unique_bytes": 1990656
+    },
+    {
+      "mode": "rebase",
+      "answer": "260",
+      "gold": "260",
+      "max_logit_error": 3.218650817871094e-05,
+      "per_step_logit_error": [
+        3.218650817871094e-05,
+        2.956390380859375e-05,
+        1.7583370208740234e-05,
+        1.5735626220703125e-05
+      ],
+      "bank_prefill_ms": 205.84587300254498,
+      "private_tail_bytes": 663552,
+      "bank_unique_bytes": 1990656
+    }
+  ],
+  "cleanup": {
+    "chunks": 0,
+    "unique_physical_bytes": 0,
+    "referenced_unique_bytes": 0,
+    "logical_reference_bytes": 0,
+    "avoided_duplicate_bytes": 0,
+    "handle_references": 0
+  },
+  "elapsed_seconds": 2.584500797005603,
+  "max_rss_kib": 3213584,
+  "script_sha256": "acb523d897d3710d472dd765039ce91791ce6bcc34c9984fc0b2aa8d334f3c73",
+  "bank_sha256": "ea1a0e81b0b36019111629c6892db33de7ac10ffa73faa8dc27c0c930046ef15"
+}

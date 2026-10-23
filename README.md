@@ -1,0 +1,129 @@
+# Experiments with contextual KV chunks
+
+This directory contains actual CPU experiments on **Qwen2.5-0.5B-Instruct**, not a random model or a simulation of model quality. The question is whether a chunk's already-computed keys and values can be moved from another history, or kept after deleting earlier reasoning, while retaining useful context. No training was performed. The production GPU backend was not used or changed.
+
+The initial evidence is mixed: correcting positions made ordinary retrieval reuse work much better; a helpful donor improved two retrieval answers; arbitrary layer mixing made several answers worse. Keeping a useful, explicit conclusion after deleting the reasoning worked in the first branch tests. The tests did **not** show reliable recovery of facts omitted from the retained text.
+
+All results below are a small engineering screen on one pretrained 0.49B model. They do not establish performance on Gemma4-31B, a custom quantized cache, real agent workloads, or long reasoning traces. The arithmetic histories are programmatically checked input traces, not model-generated reasoning.
+
+## What was held fixed
+
+Weights and tokenizer are pinned to `Qwen/Qwen2.5-0.5B-Instruct`, revision `7ae557604adf67be50417f59c2c2f167def9a775`. Every run uses CPU float32, PyTorch 2.5.1+cpu, Transformers 4.45.2, SDPA, four threads, and greedy decoding. This checkpoint has 24 layers, two KV heads, and head dimension 64. Uncompressed KV storage is 24,576 bytes per token across all layers. The constant system prompt remains present in the target cache.
+
+Target and donor chunks use literally identical token IDs. They are tokenized as explicit segments, and the segment IDs are saved; the entire intended target sequence is the same for full recomputation and each legal transplant. The donor's prefix is discarded. Its later suffix is also discarded and cannot causally affect the chunk. `wrong_payload` and `donor_full` are explicitly marked different-text controls.
+
+For a chunk shifted from position `s` to `t`, corrected reuse applies `K' = R(t-s) K` and leaves `V` unchanged. This corrects standard Qwen RoPE coordinates. It cannot erase the donor prefix's influence on deeper hidden states. The first-layer K and V must match the target after this correction; every completed run asserts this. Deeper differences are measured separately in `diagnostics.json`.
+
+Exact-prefix reuse is the numerical sanity control. Across the initial experiments it reproduced the same answers, with maximum logit discrepancies on the order of `2e-5` and a required tolerance of `3e-4`. All-layer donor reuse and the layer interventions are genuinely different computations. In the layer interventions, unused donor layers are replaced by caches computed from the clean target. Their timing is **not** evidence of a prefill optimization, because that clean computation has already been paid for.
+
+## Retrieval results
+
+Twelve seeded records each contain six three-digit vault codes, split into two chunks. Queries rotate through all six vaults. No failed baseline cases were removed. The ordinary model answered ten of twelve correctly.
+
+| Cache method / donor context | Correct / 12 | Mean answer NLL per token |
+|---|---:|---:|
+| Full recomputation | 10 | 0.1154 |
+| Exact-prefix reuse | 10 | 0.1154 |
+| Raw chunk, benign unrelated prefix | 3 | 0.8500 |
+| Position-corrected chunk, benign prefix | 10 | 0.0884 |
+| Raw chunk, helpful prefix | 2 | 1.2883 |
+| Position-corrected chunk, helpful prefix | 12 | 0.0026 |
+| Helpful donor, only layers 0–7 transplanted | 10 | 0.1249 |
+| Helpful donor, only layers 8–15 transplanted | 5 | 0.5241 |
+| Helpful donor, only layers 16–23 transplanted | 4 | 1.8375 |
+| Raw chunk, misleading prefix | 0 | 2.9762 |
+| Position-corrected chunk, misleading prefix | 10 | 0.0871 |
+| One chunk from benign donor, one from misleading donor, corrected | 10 | 0.0695 |
+| Unrelated wrong-payload control | 0 | 3.1273 |
+
+The helpful donor prefix repeats the correct fact three times before the same record. It supplies extra reinforcement even though that prefix's KV is not retained. The misleading prefix repeatedly demands a wrong answer. The latter did not defeat corrected reuse on these particular records; that is not a general robustness result. Corrected helpful reuse repaired the two baseline mistakes here, but twelve templated questions are insufficient to establish a general accuracy gain.
+
+Layer mixing is not monotonic: retaining more target-computed layers did not necessarily make helpful reuse safer. The separate layer caches do not describe a single coherent prefill trajectory. Mean relative value-cache differences from the target at layer 23 were 0.191 for benign donors, 0.291 for helpful donors, and 0.227 for misleading donors. Position correction leaves these contextual differences intact.
+
+Sources: [initial results](results/initial_retrieval/summary.json), [context and layer results](results/retrieval_contexts/summary.json). Full answers, first-token agreement, exact-match constraints, truncation, repeated bigrams, answer NLL, next-token KL, time, and bytes are in each run's `rows.csv` and `rows.jsonl`.
+
+## Can a neutral chunk carry a removed fact?
+
+In a separate twelve-case test, the target text contains only a neutral note saying the vault code was recorded. The actual code occurs only in the helpful donor prefix, which is removed before transplanting the note. Fresh recomputation recovered **0/12** codes. Raw, corrected, and each layer-band transplant also recovered **0/12**. Keeping the helpful donor prefix visible recovered **12/12**, validating that the questions are answerable with the evidence.
+
+Corrected helpful reuse slightly reduced answer NLL from 2.7070 to 2.6646, but that is not successful recall. Context changed the hidden states without providing a usable substitute for the missing factual text. This is evidence against treating arbitrary contextualized chunks as lossless memory; it does not prove that all possible carriers or larger models fail. [Recorded results](results/latent_contexts/summary.json).
+
+## Delete reasoning, retain its conclusion cache
+
+`branch_compaction.py` creates a shared prefix `P`, checked arithmetic work `R`, a conclusion `C`, and a later question `Q`. It compares:
+
+1. Full `P + R + C + Q` recomputation and exact cached `P + R + C` reuse.
+2. Freshly prefilled textual `P + C + Q`.
+3. `KV(P) + KV(C | P,R)` with the middle work removed, preserving C's original absolute RoPE positions. Q and every decoded token use their original full-branch absolute positions; physical cache slots and the causal mask are compact.
+4. The same surgical splice with C's keys rebased by `-len(R)` and Q placed contiguously. Values are unchanged.
+
+The initial archived-history layout used eight independent ledgers in three conclusion conditions:
+
+| Requested information | Full branch | Fresh summary | Keep original position holes | Rebase conclusion |
+|---|---:|---:|---:|---:|
+| Closing balance explicitly in conclusion | 7/8 | 8/8 | 8/8 | 8/8 |
+| Closing balance omitted; conclusion only says it was confirmed | 7/8 | 0/8 | 0/8 | 0/8 |
+| Opening balance omitted; conclusion gives only closing balance | 8/8 | 0/8 | 0/8 | 0/8 |
+
+The two splices retained roughly 72 prefix-plus-conclusion tokens instead of 174 prefix-plus-reasoning-plus-conclusion tokens: about 1.77 MB versus 4.28 MB of logical KV payload, or 59% less. These sizes exclude query and output tokens. A tensor slice can keep its parent allocation alive in this research harness; actual physical reclamation requires copying the retained chunk once into independent storage or using an owning chunk bank. This table therefore reports retained payload, not process RSS freed.
+
+Median online query prefill in the complete-conclusion condition was 172 ms with holes and 174 ms with rebasing, versus 222 ms for fresh summary text and 337 ms for full branch text. Existing exact full-branch cache reuse was 176 ms. The branch has already been computed in all cache-reuse measurements. These are short, single-run CPU timings on a shared machine; they are not production throughput measurements. Decode is timed separately. [Initial branch results](results/branch_compaction/summary.json).
+
+A separate chat-turn replication uses `system → user request → assistant reasoning+conclusion → user question → assistant`. Complete conclusions gave **8/8** for full history, fresh summary, and both splices. The omitted-closing-balance condition gave 3/8 for the full branch and 0/8 for every compacted condition; the omitted-opening-balance condition gave 8/8 full and 0/8 compacted. The weak full baseline in the opaque chat condition limits that comparison, and all cases remain reported. Retained payload was about 1.99 MB rather than 4.50 MB. [Chat-turn results](results/chat_branch_compaction/summary.json).
+
+## A working bank with shared pointers
+
+`chunk_bank.py` implements owning, content-addressed immutable chunks; explicit branch references; independent writable tails; sealing a tail into shared chunks; and eviction that rejects live references. Ingestion makes one independent copy so retaining a small slice does not accidentally retain its large parent allocation. Forking shared handles does not copy KV. An unsealed tail is copied on a fork; sealing first makes it shareable. Use `close()` or a context manager to release references.
+
+Attention processes chunks separately and merges stable softmax accumulators. It does not concatenate the full KV history or repeat GQA key/value heads. A position shift `delta` rotates the query by `-delta` for that block instead of creating a shifted persistent copy of its keys. This preserves the standard RoPE dot product. Causal masking uses the shifted key positions and explicit query positions. The code is a CPU reference, with standard unquantized RoPE only.
+
+The implementation was checked against dense attention and then used for an actual Qwen forward pass through all 24 layers, reading the retained conclusion by handle. It generated the same correct answer (`260`) as the ordinary Transformers path in both position modes. Maximum logit differences across the query and subsequent decode steps were approximately **3.2e-5**. This is numerical equivalence to the corresponding *already-spliced* dense computation, not equivalence to the deleted full reasoning history.
+
+For that real model case, one prefix-plus-conclusion bank occupied **1,990,656 bytes**. A root view and four forks still occupied **1,990,656 bytes** of shared bank storage, while referencing **9,953,280 logical bytes**. The avoided duplicate storage was 7,962,624 bytes. Each active branch's query/output tail remains additional memory. Releasing all views and evicting unreferenced chunks returned the bank's owned-byte count to zero. These are actual tensor storage counts, not a measurement of process RSS.
+
+Five focused tests cover sharing, owning slices, independent tails, sealing, reference removal, eviction, GQA, causal holes, shifted positions, and rejection of incompatible import plans. An 830 KB fixture contains real Qwen query and conclusion tensors at layers 0, 12, and 23; its six attention checks compare the bank with PyTorch's dense SDPA independently of model loading. [Full-model verification](results/bank_verification/verification.json).
+
+The recorded Python-bank query prefill was roughly 196–206 ms, compared with roughly 170 ms for dense cached queries in the earlier screen. These separate short runs are not a rigorous performance comparison. This is a storage-sharing and numerical-parity prototype, not a measured throughput improvement. Pointer sharing, paged attention, and stable blockwise softmax have prior art: [PagedAttention](https://arxiv.org/abs/2309.06180), [FlashAttention](https://arxiv.org/abs/2205.14135), and [Prompt Cache](https://arxiv.org/abs/2311.04934). Novelty of a broader system is not established.
+
+## Reproduce and inspect
+
+Model files live in the ordinary Hugging Face cache, outside this directory. The public checkpoint download is about 1 GB. No production service, GPU, or external inference API is needed. Python 3.12 was used.
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install 'torch==2.5.1+cpu' --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+hf download Qwen/Qwen2.5-0.5B-Instruct --revision 7ae557604adf67be50417f59c2c2f167def9a775
+
+python run_experiment.py --output results/reproduction_retrieval --count 12 --threads 4 --max-new-tokens 8
+python run_experiment.py --output results/reproduction_contexts --count 12 --threads 4 --max-new-tokens 8 --contexts helpful misleading --methods full exact raw rebase lower8 middle8 upper8 mixed wrong_payload donor_full
+python run_experiment.py --output results/reproduction_latent --suite latent --count 12 --threads 4 --max-new-tokens 8 --contexts benign helpful misleading --methods full exact raw rebase lower8 middle8 upper8 donor_full
+python branch_compaction.py --output results/reproduction_branch --count 8 --threads 4 --max-new-tokens 10 --layout chat_branch
+python validate_results.py
+python -m unittest -v test_chunk_bank.py
+python verify_fixture.py
+python verify_qwen_bank.py --output results/reproduction_bank
+```
+
+Every result directory contains prompts and token IDs, machine-readable rows and summaries, diagnostic layer differences, resource metadata, and a snapshot of the exact source used. `script_sha256` identifies that snapshot. Later fixes do not rewrite earlier measurements. `validate_results.py` checks snapshot hashes, numerical identity controls, answer scores, arithmetic, cache sizes, and the hole-versus-contiguous position invariant without loading the model.
+
+The five quality runs contain 720 scored rows and took about seven minutes of model execution total with a peak RSS near 3.1 GiB. Setup, analysis, and the bank checks are separate. Retrieval decode is capped at eight new tokens, branch decode at ten; truncation flags are recorded. Samples are templated and share a model/prompt family, so 720 scored rows are not 720 independent tasks. There are only twelve retrieval records, twelve hidden-fact records, and eight arithmetic ledgers, with the ledgers repeated under two chat layouts.
+
+## Next controlled test: an explicit summary pass
+
+The intended workflow is **reasoning branch → a separate summary pass → durable conclusion chunk → cached reuse by handle**. Summarization must explicitly preserve useful facts, conclusions, evidence, assumptions, and unresolved items. The current tests use checked, hand-authored conclusions; they do not yet evaluate the quality or cost of an automatic summarizer.
+
+The next test should generate reasoning with the model, then separately generate a durable summary from that reasoning, freeze that exact summary's text and contextual KV, and compare later questions using full history, freshly prefilled summary text, original-position summary KV, and rebased summary KV. The summary text must be identical in the latter three conditions. Include questions about both preserved facts and deliberately omitted details. Charge for the reasoning pass, summary-input prefill, summary generation, initial owned-cache copy, and later queries; report amortization over repeated uses. A summary does useful semantic compression only if the subsequent tasks remain answerable. Keeping its contextual KV should be evaluated for additional benefit, not assumed to replace adequate summary content.
+
+## Relation to existing work and a backend boundary
+
+[CacheBlend](https://arxiv.org/abs/2405.16444) studies position-corrected chunk reuse with selective recomputation to recover the target prefill's quality. [Cache-Craft](https://arxiv.org/abs/2502.15734) studies context-dependent chunk reusability and selective repair. The tests here do not reproduce either system or claim a new position-correction algorithm. Their additional question is whether keeping a donor's contextual influence can help, and whether a contextualized conclusion retains useful information after its earlier reasoning is removed. No claim that training is always required is supported: these interventions are training-free.
+
+An experimental chunk bank should distinguish an exact cache hit from a contextual-memory request. At minimum, a chunk needs a model/tokenizer/precision/layout fingerprint, its token IDs, original absolute positions, layer range, and donor-prefix provenance. The test results favor explicit, sufficient conclusions as the initial useful object. Arbitrary hidden information is not a demonstrated substitute for a written conclusion. These are design implications from this small screen, not validated selection rules.
+
+vLLM's normal [prefix cache](https://docs.vllm.ai/en/latest/design/prefix_caching/) hashes a block together with its parent prefix. Relaxing that key would silently turn an exact cache into a different computation. A deliberate experimental path needs separate chunk handles, block-position metadata, compatible attention kernels, and explicit lifecycle/accounting. `adapter_contract.py` implements validation and CPU view preparation only; it rejects unsupported quantization, scaled RoPE, sliding windows, and soft-capped attention. It does not load or patch vLLM. For a custom quantized cache, dequantization/rotation/requantization may change accuracy, and layout, scales, head shapes, attention masks, and model-specific RoPE must be validated. The Qwen CPU experiments alone establish none of that compatibility.
+
+Develop the backend implementation on a **feature branch or fork first**. A later **narrow upstream PR** can expose proven block-lifetime, import, or attention hooks once tests and a useful workload support them. These are sequential options, not alternatives. The current production vLLM 0.32/custom TurboQuant environment has not been integrated or tested here. See [the adapter boundary](VLLM_ADAPTER.md).
+
+Sharing immutable chunks by pointer can avoid repeated storage and transfer. It does not eliminate the memory for unique chunks or the attention work over active chunks, and it does not make a finite context unlimited. A conclusion can reduce retained KV size because it is shorter; pointer reuse and semantic compression are separate effects.

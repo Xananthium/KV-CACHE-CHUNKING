@@ -1,0 +1,6 @@
+# Install CPU PyTorch separately as described in README.md.
+transformers==4.45.2
+tokenizers==0.20.3
+huggingface-hub==0.36.2
+safetensors==0.8.0
+numpy==2.5.4
