@@ -1,0 +1,2102 @@
+[
+  {
+    "case_id": "retrieval_00",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.0682811737060547e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.387330428315181e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.465217590332031e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.0045914179645478725,
+        "value_relative_l2": 0.034026097506284714,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07675087451934814
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005238519515842199,
+        "value_relative_l2": 0.044691480696201324,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.02523897960782051,
+        "value_relative_l2": 0.09415983408689499,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.04339168593287468,
+        "value_relative_l2": 0.1401299089193344,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.09046491235494614,
+        "value_relative_l2": 0.1485041379928589,
+        "key_max_absolute": 1.2806099653244019,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09856538474559784,
+        "value_relative_l2": 0.18048910796642303,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07065388560295105,
+        "value_relative_l2": 0.17628931999206543,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.0073662870563566685,
+        "value_relative_l2": 0.188150092959404,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08757682144641876,
+        "value_relative_l2": 0.17292416095733643,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8913472294807434
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11168443411588669,
+        "value_relative_l2": 0.26296505331993103,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1385871171951294,
+        "value_relative_l2": 0.2288176566362381,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14953550696372986,
+        "value_relative_l2": 0.44999614357948303,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.2608508765697479,
+        "value_relative_l2": 0.33073297142982483,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.21030791103839874,
+        "value_relative_l2": 0.34609538316726685,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.2124863564968109,
+        "value_relative_l2": 0.3493640422821045,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.23112906515598297,
+        "value_relative_l2": 0.13036388158798218,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.14562276005744934,
+        "value_relative_l2": 0.17150941491127014,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15848520398139954,
+        "value_relative_l2": 0.20428051054477692,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15707208216190338,
+        "value_relative_l2": 0.2984275221824646,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19294020533561707,
+        "value_relative_l2": 0.13643041253089905,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19442392885684967,
+        "value_relative_l2": 0.16595898568630219,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19453804194927216,
+        "value_relative_l2": 0.12172161042690277,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.1593499630689621,
+        "value_relative_l2": 0.19377341866493225,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_01",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.3365020751953125e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3871100179585483e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.441375732421875e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004576362203806639,
+        "value_relative_l2": 0.03392987698316574,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07839709520339966
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.00524513702839613,
+        "value_relative_l2": 0.044793203473091125,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.02513205073773861,
+        "value_relative_l2": 0.09456617385149002,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.043072544038295746,
+        "value_relative_l2": 0.13904725015163422,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08976118266582489,
+        "value_relative_l2": 0.14888153970241547,
+        "key_max_absolute": 1.2803211212158203,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09838735312223434,
+        "value_relative_l2": 0.17929977178573608,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07045778632164001,
+        "value_relative_l2": 0.1749647706747055,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.0073495786637067795,
+        "value_relative_l2": 0.18931502103805542,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08834215998649597,
+        "value_relative_l2": 0.1740863174200058,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.899864673614502
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11229304224252701,
+        "value_relative_l2": 0.26197442412376404,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1393478512763977,
+        "value_relative_l2": 0.22936177253723145,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14976613223552704,
+        "value_relative_l2": 0.45026707649230957,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.2594670057296753,
+        "value_relative_l2": 0.33194661140441895,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20898203551769257,
+        "value_relative_l2": 0.34698110818862915,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21166035532951355,
+        "value_relative_l2": 0.34799984097480774,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.22930505871772766,
+        "value_relative_l2": 0.12937991321086884,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1458698958158493,
+        "value_relative_l2": 0.17315632104873657,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15876856446266174,
+        "value_relative_l2": 0.2047690749168396,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15798495709896088,
+        "value_relative_l2": 0.2996889054775238,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19536647200584412,
+        "value_relative_l2": 0.13361820578575134,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19564329087734222,
+        "value_relative_l2": 0.16540153324604034,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19606709480285645,
+        "value_relative_l2": 0.11798075586557388,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15993694961071014,
+        "value_relative_l2": 0.19012127816677094,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_02",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 3.2767653465270996e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3819229138789524e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.465217590332031e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004552246071398258,
+        "value_relative_l2": 0.03391103073954582,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.0774151086807251
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005208269692957401,
+        "value_relative_l2": 0.044968247413635254,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025195444002747536,
+        "value_relative_l2": 0.0935487300157547,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.043021585792303085,
+        "value_relative_l2": 0.13852901756763458,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08962028473615646,
+        "value_relative_l2": 0.1491873860359192,
+        "key_max_absolute": 1.2872333526611328,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.0975864976644516,
+        "value_relative_l2": 0.1786002218723297,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.0697644054889679,
+        "value_relative_l2": 0.17548227310180664,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007321863900870085,
+        "value_relative_l2": 0.18639032542705536,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08696047216653824,
+        "value_relative_l2": 0.17233455181121826,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.9166002869606018
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11240290105342865,
+        "value_relative_l2": 0.2610824704170227,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1382814645767212,
+        "value_relative_l2": 0.2271878570318222,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14869925379753113,
+        "value_relative_l2": 0.4453871548175812,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.25947561860084534,
+        "value_relative_l2": 0.3286687135696411,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20879168808460236,
+        "value_relative_l2": 0.34377938508987427,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21114887297153473,
+        "value_relative_l2": 0.3452451825141907,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.22895324230194092,
+        "value_relative_l2": 0.12837666273117065,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1451771855354309,
+        "value_relative_l2": 0.17029008269309998,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15803751349449158,
+        "value_relative_l2": 0.20112460851669312,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.1567402333021164,
+        "value_relative_l2": 0.29898858070373535,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19109904766082764,
+        "value_relative_l2": 0.1351572424173355,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19326214492321014,
+        "value_relative_l2": 0.16469985246658325,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.1936759650707245,
+        "value_relative_l2": 0.12319643795490265,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15919028222560883,
+        "value_relative_l2": 0.19387176632881165,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_03",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 1.811981201171875e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3809567178668658e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.441375732421875e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004605879075825214,
+        "value_relative_l2": 0.03413611650466919,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07913053035736084
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.00526938121765852,
+        "value_relative_l2": 0.044915031641721725,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.02527371235191822,
+        "value_relative_l2": 0.09417485445737839,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.04329220950603485,
+        "value_relative_l2": 0.13971947133541107,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.09012889117002487,
+        "value_relative_l2": 0.14877229928970337,
+        "key_max_absolute": 1.2804532051086426,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.0993591770529747,
+        "value_relative_l2": 0.1793648600578308,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07077416032552719,
+        "value_relative_l2": 0.17629840970039368,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007420036010444164,
+        "value_relative_l2": 0.18836148083209991,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08717074245214462,
+        "value_relative_l2": 0.17370061576366425,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.9058970212936401
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11473862826824188,
+        "value_relative_l2": 0.2634178102016449,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.13999110460281372,
+        "value_relative_l2": 0.22938044369220734,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14858928322792053,
+        "value_relative_l2": 0.44512394070625305,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.25972437858581543,
+        "value_relative_l2": 0.3308957517147064,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20829398930072784,
+        "value_relative_l2": 0.3481665849685669,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21143953502178192,
+        "value_relative_l2": 0.3476848006248474,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.23025454580783844,
+        "value_relative_l2": 0.1294286847114563,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1449565440416336,
+        "value_relative_l2": 0.17136812210083008,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15751676261425018,
+        "value_relative_l2": 0.20751029253005981,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15735197067260742,
+        "value_relative_l2": 0.30137255787849426,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19297099113464355,
+        "value_relative_l2": 0.1348906010389328,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19326084852218628,
+        "value_relative_l2": 0.16551989316940308,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19370804727077484,
+        "value_relative_l2": 0.1203596368432045,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15858307480812073,
+        "value_relative_l2": 0.18908187747001648,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_04",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 1.71661376953125e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3860390879472106e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.441375732421875e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004560377448797226,
+        "value_relative_l2": 0.033793505281209946,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07783490419387817
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005245742853730917,
+        "value_relative_l2": 0.0451337955892086,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.02510201930999756,
+        "value_relative_l2": 0.09472445398569107,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.04296569526195526,
+        "value_relative_l2": 0.13962535560131073,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.09106417000293732,
+        "value_relative_l2": 0.1516047716140747,
+        "key_max_absolute": 1.2832093238830566,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09917035698890686,
+        "value_relative_l2": 0.18004411458969116,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07056652754545212,
+        "value_relative_l2": 0.1769779920578003,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.0074076345190405846,
+        "value_relative_l2": 0.18969324231147766,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.0880436971783638,
+        "value_relative_l2": 0.17513975501060486,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.9277684688568115
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11337690055370331,
+        "value_relative_l2": 0.26423850655555725,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1403750330209732,
+        "value_relative_l2": 0.23118095099925995,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.15019866824150085,
+        "value_relative_l2": 0.45119133591651917,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.2630177438259125,
+        "value_relative_l2": 0.3363681733608246,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.21363849937915802,
+        "value_relative_l2": 0.35339269042015076,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.2186025232076645,
+        "value_relative_l2": 0.3558101952075958,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.2334134727716446,
+        "value_relative_l2": 0.13255855441093445,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1492745280265808,
+        "value_relative_l2": 0.1754714846611023,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.16197147965431213,
+        "value_relative_l2": 0.21672657132148743,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.16082601249217987,
+        "value_relative_l2": 0.3047056794166565,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.1975248008966446,
+        "value_relative_l2": 0.1405259072780609,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.1979568749666214,
+        "value_relative_l2": 0.17447929084300995,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19890905916690826,
+        "value_relative_l2": 0.12806545197963715,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.1628178358078003,
+        "value_relative_l2": 0.19769568741321564,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_05",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 1.621246337890625e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3832838874350273e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.441375732421875e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004539146553725004,
+        "value_relative_l2": 0.033884674310684204,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07749593257904053
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005219642072916031,
+        "value_relative_l2": 0.04478131979703903,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.02514282613992691,
+        "value_relative_l2": 0.09350121021270752,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.0427917018532753,
+        "value_relative_l2": 0.13887368142604828,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.0894809290766716,
+        "value_relative_l2": 0.14867393672466278,
+        "key_max_absolute": 1.2803211212158203,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09751803427934647,
+        "value_relative_l2": 0.17746514081954956,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.06987307220697403,
+        "value_relative_l2": 0.1745556890964508,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.00732391607016325,
+        "value_relative_l2": 0.18711194396018982,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08717436343431473,
+        "value_relative_l2": 0.17174331843852997,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8752937912940979
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11269441992044449,
+        "value_relative_l2": 0.26238930225372314,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.13942347466945648,
+        "value_relative_l2": 0.22940011322498322,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14917197823524475,
+        "value_relative_l2": 0.44803062081336975,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.26059412956237793,
+        "value_relative_l2": 0.327355295419693,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.21012406051158905,
+        "value_relative_l2": 0.34828606247901917,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21197108924388885,
+        "value_relative_l2": 0.34734711050987244,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.23017571866512299,
+        "value_relative_l2": 0.12778958678245544,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.14458680152893066,
+        "value_relative_l2": 0.17053909599781036,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15751108527183533,
+        "value_relative_l2": 0.20236381888389587,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15612974762916565,
+        "value_relative_l2": 0.29699674248695374,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19277852773666382,
+        "value_relative_l2": 0.13382530212402344,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19448739290237427,
+        "value_relative_l2": 0.1635621041059494,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19434510171413422,
+        "value_relative_l2": 0.11922293901443481,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15879519283771515,
+        "value_relative_l2": 0.1901467740535736,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_06",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 1.9073486328125e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3866552706076618e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.465217590332031e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004582152236253023,
+        "value_relative_l2": 0.03389521688222885,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07772111892700195
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005230709910392761,
+        "value_relative_l2": 0.044720619916915894,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025059791281819344,
+        "value_relative_l2": 0.09426472336053848,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.04291492700576782,
+        "value_relative_l2": 0.13913986086845398,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.09042145311832428,
+        "value_relative_l2": 0.1483643352985382,
+        "key_max_absolute": 1.2832398414611816,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.0975615382194519,
+        "value_relative_l2": 0.17676794528961182,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.06957060098648071,
+        "value_relative_l2": 0.17387691140174866,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007312752306461334,
+        "value_relative_l2": 0.18588761985301971,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08619225770235062,
+        "value_relative_l2": 0.17174839973449707,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8664907813072205
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.1128716766834259,
+        "value_relative_l2": 0.26153862476348877,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1385529637336731,
+        "value_relative_l2": 0.2279762178659439,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14875556528568268,
+        "value_relative_l2": 0.4467776119709015,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.2578830420970917,
+        "value_relative_l2": 0.3264337182044983,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.2082451730966568,
+        "value_relative_l2": 0.34659919142723083,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21122655272483826,
+        "value_relative_l2": 0.3474223017692566,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.22645479440689087,
+        "value_relative_l2": 0.12957791984081268,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1459227353334427,
+        "value_relative_l2": 0.17168480157852173,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15834470093250275,
+        "value_relative_l2": 0.2026403695344925,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.1568199247121811,
+        "value_relative_l2": 0.2958364486694336,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.1930530071258545,
+        "value_relative_l2": 0.134728342294693,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.1947728991508484,
+        "value_relative_l2": 0.16490678489208221,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19462907314300537,
+        "value_relative_l2": 0.12034796923398972,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15830129384994507,
+        "value_relative_l2": 0.19402307271957397,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_07",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 3.0994415283203125e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3838013046552078e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.441375732421875e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004550667013972998,
+        "value_relative_l2": 0.033945050090551376,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07862257957458496
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.0052105761133134365,
+        "value_relative_l2": 0.044662270694971085,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.024976300075650215,
+        "value_relative_l2": 0.09326871484518051,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.04298418387770653,
+        "value_relative_l2": 0.13851262629032135,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08919695019721985,
+        "value_relative_l2": 0.14639496803283691,
+        "key_max_absolute": 1.2803211212158203,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09661702066659927,
+        "value_relative_l2": 0.17841708660125732,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07007382810115814,
+        "value_relative_l2": 0.175649955868721,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007335260044783354,
+        "value_relative_l2": 0.1877470463514328,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08767808973789215,
+        "value_relative_l2": 0.1721419245004654,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8809163570404053
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11164341866970062,
+        "value_relative_l2": 0.2616629898548126,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.13935276865959167,
+        "value_relative_l2": 0.22734281420707703,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.1483973264694214,
+        "value_relative_l2": 0.4445144236087799,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.25784075260162354,
+        "value_relative_l2": 0.3275573253631592,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20853790640830994,
+        "value_relative_l2": 0.3460584878921509,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21107210218906403,
+        "value_relative_l2": 0.3477144241333008,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.2296067625284195,
+        "value_relative_l2": 0.1293722689151764,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.14547127485275269,
+        "value_relative_l2": 0.1741785854101181,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.1581118404865265,
+        "value_relative_l2": 0.2087436318397522,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.1574869155883789,
+        "value_relative_l2": 0.30035334825515747,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19244223833084106,
+        "value_relative_l2": 0.13737963140010834,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19368964433670044,
+        "value_relative_l2": 0.16605646908283234,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19409602880477905,
+        "value_relative_l2": 0.12017551064491272,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.1590040773153305,
+        "value_relative_l2": 0.19138216972351074,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_08",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.7894973754882812e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3856380576271476e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.5367431640625e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004560768138617277,
+        "value_relative_l2": 0.03397058695554733,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07993125915527344
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005233795382082462,
+        "value_relative_l2": 0.04502827674150467,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025069763883948326,
+        "value_relative_l2": 0.09436718374490738,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.0430760532617569,
+        "value_relative_l2": 0.13990820944309235,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.09028954058885574,
+        "value_relative_l2": 0.1484464704990387,
+        "key_max_absolute": 1.2803211212158203,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09851488471031189,
+        "value_relative_l2": 0.17850959300994873,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07024227827787399,
+        "value_relative_l2": 0.1756984144449234,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007366260513663292,
+        "value_relative_l2": 0.18758374452590942,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08791382610797882,
+        "value_relative_l2": 0.17454224824905396,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.947293758392334
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11323468387126923,
+        "value_relative_l2": 0.2659551501274109,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1395014524459839,
+        "value_relative_l2": 0.23130369186401367,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14960095286369324,
+        "value_relative_l2": 0.44966813921928406,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.26213711500167847,
+        "value_relative_l2": 0.33643585443496704,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.21251609921455383,
+        "value_relative_l2": 0.3528172969818115,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21555384993553162,
+        "value_relative_l2": 0.3522379994392395,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.2319934070110321,
+        "value_relative_l2": 0.12981246411800385,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.14758700132369995,
+        "value_relative_l2": 0.17386317253112793,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.1604873090982437,
+        "value_relative_l2": 0.205462247133255,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15898169577121735,
+        "value_relative_l2": 0.29802802205085754,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19638299942016602,
+        "value_relative_l2": 0.13787959516048431,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19650986790657043,
+        "value_relative_l2": 0.16786575317382812,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.1969512552022934,
+        "value_relative_l2": 0.12271738797426224,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.16018535196781158,
+        "value_relative_l2": 0.1954650580883026,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_09",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.765655517578125e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3852898916866252e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.5367431640625e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004558610264211893,
+        "value_relative_l2": 0.03397136926651001,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07732164859771729
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.0052157314494252205,
+        "value_relative_l2": 0.044351208955049515,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025061221793293953,
+        "value_relative_l2": 0.0934031754732132,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.043043430894613266,
+        "value_relative_l2": 0.13817842304706573,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08964967727661133,
+        "value_relative_l2": 0.14704521000385284,
+        "key_max_absolute": 1.2803211212158203,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09771443158388138,
+        "value_relative_l2": 0.17889784276485443,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.0699591338634491,
+        "value_relative_l2": 0.1743287593126297,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007310747634619474,
+        "value_relative_l2": 0.18747666478157043,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08808186650276184,
+        "value_relative_l2": 0.1722685843706131,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8880049586296082
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11106502264738083,
+        "value_relative_l2": 0.26054781675338745,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1391683965921402,
+        "value_relative_l2": 0.22603529691696167,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14851120114326477,
+        "value_relative_l2": 0.4421612620353699,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.25939664244651794,
+        "value_relative_l2": 0.3276306688785553,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20907559990882874,
+        "value_relative_l2": 0.3405429720878601,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21056878566741943,
+        "value_relative_l2": 0.3454681932926178,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.22935336828231812,
+        "value_relative_l2": 0.1272994875907898,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1443428248167038,
+        "value_relative_l2": 0.17153935134410858,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15800133347511292,
+        "value_relative_l2": 0.20045003294944763,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15686264634132385,
+        "value_relative_l2": 0.30042174458503723,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.1935957372188568,
+        "value_relative_l2": 0.13125737011432648,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.19424673914909363,
+        "value_relative_l2": 0.16052201390266418,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19505436718463898,
+        "value_relative_l2": 0.1138298436999321,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15918368101119995,
+        "value_relative_l2": 0.183035746216774,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_10",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.4080276489257812e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.386991925755865e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.5367431640625e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.0045654308050870895,
+        "value_relative_l2": 0.033988360315561295,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.0769357681274414
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005247848108410835,
+        "value_relative_l2": 0.044852547347545624,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025233421474695206,
+        "value_relative_l2": 0.09326720237731934,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.043060481548309326,
+        "value_relative_l2": 0.13886412978172302,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08934497088193893,
+        "value_relative_l2": 0.14734117686748505,
+        "key_max_absolute": 1.2883085012435913,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.0970047190785408,
+        "value_relative_l2": 0.17928540706634521,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.07029005885124207,
+        "value_relative_l2": 0.17593830823898315,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.007370432373136282,
+        "value_relative_l2": 0.18759463727474213,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08668994903564453,
+        "value_relative_l2": 0.17334586381912231,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8819799423217773
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11281301826238632,
+        "value_relative_l2": 0.2618020176887512,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1383836567401886,
+        "value_relative_l2": 0.22911415994167328,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.14973583817481995,
+        "value_relative_l2": 0.4464036822319031,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.2606249451637268,
+        "value_relative_l2": 0.32840782403945923,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.2104814648628235,
+        "value_relative_l2": 0.34674423933029175,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.21159595251083374,
+        "value_relative_l2": 0.3481460213661194,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.23200905323028564,
+        "value_relative_l2": 0.1295766979455948,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.14571258425712585,
+        "value_relative_l2": 0.17275430262088776,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15778905153274536,
+        "value_relative_l2": 0.20352093875408173,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.15717826783657074,
+        "value_relative_l2": 0.2958468496799469,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.1943153589963913,
+        "value_relative_l2": 0.13619963824748993,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.1947159320116043,
+        "value_relative_l2": 0.16548611223697662,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19508369266986847,
+        "value_relative_l2": 0.11992064863443375,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15953105688095093,
+        "value_relative_l2": 0.1909007430076599,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  },
+  {
+    "case_id": "retrieval_11",
+    "context": "benign",
+    "exact_prefix_max_logit_difference": 2.7894973754882812e-05,
+    "layer_errors_after_rope_rebase": [
+      {
+        "layer": 0,
+        "key_relative_l2": 1.3816718080761348e-07,
+        "value_relative_l2": 0.0,
+        "key_max_absolute": 9.465217590332031e-05,
+        "value_max_absolute": 0.0
+      },
+      {
+        "layer": 1,
+        "key_relative_l2": 0.004573751240968704,
+        "value_relative_l2": 0.03397958353161812,
+        "key_max_absolute": 0.7482304573059082,
+        "value_max_absolute": 0.07844430208206177
+      },
+      {
+        "layer": 2,
+        "key_relative_l2": 0.005254976451396942,
+        "value_relative_l2": 0.04478100314736366,
+        "key_max_absolute": 0.5230751037597656,
+        "value_max_absolute": 0.14563952386379242
+      },
+      {
+        "layer": 3,
+        "key_relative_l2": 0.025248581543564796,
+        "value_relative_l2": 0.09370192140340805,
+        "key_max_absolute": 1.2274112701416016,
+        "value_max_absolute": 0.5577596426010132
+      },
+      {
+        "layer": 4,
+        "key_relative_l2": 0.0429479144513607,
+        "value_relative_l2": 0.13887815177440643,
+        "key_max_absolute": 1.2457871437072754,
+        "value_max_absolute": 0.7365683317184448
+      },
+      {
+        "layer": 5,
+        "key_relative_l2": 0.08937234431505203,
+        "value_relative_l2": 0.1461886763572693,
+        "key_max_absolute": 1.2888458967208862,
+        "value_max_absolute": 0.5167343616485596
+      },
+      {
+        "layer": 6,
+        "key_relative_l2": 0.09706432372331619,
+        "value_relative_l2": 0.1783151626586914,
+        "key_max_absolute": 1.1879205703735352,
+        "value_max_absolute": 0.6645883917808533
+      },
+      {
+        "layer": 7,
+        "key_relative_l2": 0.06989362090826035,
+        "value_relative_l2": 0.17414292693138123,
+        "key_max_absolute": 1.3843011856079102,
+        "value_max_absolute": 0.756365954875946
+      },
+      {
+        "layer": 8,
+        "key_relative_l2": 0.0073258052580058575,
+        "value_relative_l2": 0.18696202337741852,
+        "key_max_absolute": 1.924041748046875,
+        "value_max_absolute": 0.6921505331993103
+      },
+      {
+        "layer": 9,
+        "key_relative_l2": 0.08659043908119202,
+        "value_relative_l2": 0.17099332809448242,
+        "key_max_absolute": 2.3060693740844727,
+        "value_max_absolute": 0.8664907813072205
+      },
+      {
+        "layer": 10,
+        "key_relative_l2": 0.11189330369234085,
+        "value_relative_l2": 0.2602413594722748,
+        "key_max_absolute": 1.6636996269226074,
+        "value_max_absolute": 1.3349825143814087
+      },
+      {
+        "layer": 11,
+        "key_relative_l2": 0.1382530778646469,
+        "value_relative_l2": 0.22827640175819397,
+        "key_max_absolute": 3.1377663612365723,
+        "value_max_absolute": 1.3689415454864502
+      },
+      {
+        "layer": 12,
+        "key_relative_l2": 0.1490468680858612,
+        "value_relative_l2": 0.4452717900276184,
+        "key_max_absolute": 3.9320151805877686,
+        "value_max_absolute": 1.7152583599090576
+      },
+      {
+        "layer": 13,
+        "key_relative_l2": 0.25829198956489563,
+        "value_relative_l2": 0.32695236802101135,
+        "key_max_absolute": 4.985265731811523,
+        "value_max_absolute": 1.410567283630371
+      },
+      {
+        "layer": 14,
+        "key_relative_l2": 0.20783528685569763,
+        "value_relative_l2": 0.345263808965683,
+        "key_max_absolute": 3.437091827392578,
+        "value_max_absolute": 1.5798240900039673
+      },
+      {
+        "layer": 15,
+        "key_relative_l2": 0.20941783487796783,
+        "value_relative_l2": 0.34392738342285156,
+        "key_max_absolute": 2.747999668121338,
+        "value_max_absolute": 2.270158290863037
+      },
+      {
+        "layer": 16,
+        "key_relative_l2": 0.22795937955379486,
+        "value_relative_l2": 0.1287134289741516,
+        "key_max_absolute": 5.311549186706543,
+        "value_max_absolute": 0.8790251016616821
+      },
+      {
+        "layer": 17,
+        "key_relative_l2": 0.1441616415977478,
+        "value_relative_l2": 0.17116594314575195,
+        "key_max_absolute": 2.455172300338745,
+        "value_max_absolute": 1.03439462184906
+      },
+      {
+        "layer": 18,
+        "key_relative_l2": 0.15629863739013672,
+        "value_relative_l2": 0.2012605220079422,
+        "key_max_absolute": 2.304873466491699,
+        "value_max_absolute": 0.9303747415542603
+      },
+      {
+        "layer": 19,
+        "key_relative_l2": 0.155462846159935,
+        "value_relative_l2": 0.29508259892463684,
+        "key_max_absolute": 3.483581066131592,
+        "value_max_absolute": 1.5444447994232178
+      },
+      {
+        "layer": 20,
+        "key_relative_l2": 0.19247590005397797,
+        "value_relative_l2": 0.13186419010162354,
+        "key_max_absolute": 3.8289902210235596,
+        "value_max_absolute": 1.590741515159607
+      },
+      {
+        "layer": 21,
+        "key_relative_l2": 0.1925470530986786,
+        "value_relative_l2": 0.16137763857841492,
+        "key_max_absolute": 3.4536170959472656,
+        "value_max_absolute": 1.787936806678772
+      },
+      {
+        "layer": 22,
+        "key_relative_l2": 0.19235938787460327,
+        "value_relative_l2": 0.11622951179742813,
+        "key_max_absolute": 3.1024832725524902,
+        "value_max_absolute": 2.298039436340332
+      },
+      {
+        "layer": 23,
+        "key_relative_l2": 0.15777508914470673,
+        "value_relative_l2": 0.18676739931106567,
+        "key_max_absolute": 2.368030071258545,
+        "value_max_absolute": 3.9301557540893555
+      }
+    ]
+  }
+]

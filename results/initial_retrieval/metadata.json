@@ -1,0 +1,38 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "torch": "2.5.1+cpu",
+  "transformers": "4.45.2",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "device": "cpu",
+  "precision": "float32",
+  "attention": "sdpa",
+  "seed": 20261023,
+  "threads": 4,
+  "num_layers": 24,
+  "kv_heads": 2,
+  "head_dim": 64,
+  "arguments": {
+    "output": "/home/isnotreal/batbox/experiments/kv_reuse/results/initial_retrieval",
+    "count": 12,
+    "suite": "retrieval",
+    "methods": [
+      "full",
+      "exact",
+      "raw",
+      "rebase"
+    ],
+    "contexts": [
+      "benign"
+    ],
+    "threads": 4,
+    "seed": 20261023,
+    "max_new_tokens": 8
+  },
+  "script_sha256": "f1c2d99048ae70de5384e4380f5b31283db4abccc2a9c89d8f2ba490eba23b49",
+  "timing_note": "online_prefill_ms includes cache assembly and suffix forward; cache bank construction, target-prefix cache, and clean hybrid layers excluded and separately recorded. Layer-band methods are quality interventions, not speedup implementations.",
+  "elapsed_seconds": 32.24826375099656,
+  "max_rss_kib": 3209564,
+  "n_scored_rows": 48
+}

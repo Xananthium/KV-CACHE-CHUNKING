@@ -1,0 +1,25 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "torch": "2.5.1+cpu",
+  "transformers": "4.45.2",
+  "python": "3.12.3",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 4,
+  "seed": 20261024,
+  "script_sha256": "11e75db8ea2c043fefe469bf57792d03f3176f68222266d652aa05a732f2c62e",
+  "arguments": {
+    "output": "/home/isnotreal/batbox/experiments/kv_reuse/results/branch_compaction",
+    "count": 8,
+    "seed": 20261024,
+    "threads": 4,
+    "max_new_tokens": 10
+  },
+  "reasoning_source": "Deterministic, programmatically verified arithmetic traces; not model-generated reasoning.",
+  "position_semantics": "Physical cache positions are compact in both splice modes. splice_holes retains original C key rotations, explicitly places Q and every decoded token at their original branch absolute RoPE positions. splice_rebase rotates C keys by -len(R), leaves values untouched, and uses contiguous Q/decode positions.",
+  "timing_semantics": "Branch construction is offline. splice online prefill includes tensor assembly plus query; fresh_summary computes P+C+Q from scratch. exact_full_cache uses pre-existing P+R+C. No decode-time speedup guarantee.",
+  "n_scored_rows": 120,
+  "elapsed_seconds": 62.26369605399668,
+  "max_rss_kib": 3209076
+}
