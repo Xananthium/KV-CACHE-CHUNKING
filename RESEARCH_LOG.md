@@ -98,3 +98,25 @@ do not establish automatic-summary quality or make missing details recoverable.
 Implementation direction: feature branch/fork first, then a narrow upstream PR
 for any proven engine hooks. Production custom TurboQuant compatibility remains
 unverified; adapter_contract.py explicitly rejects that unsupported ABI.
+
+## 2026-10-23: generated work and generated summary pilot
+
+The previously proposed separate summary pass is now implemented and evaluated
+in `generated_summary.py`. Four independently sampled arithmetic records produce
+model-generated work and two model-generated summary variants. KV comes directly
+from those generation passes; no discarded work is replayed to obtain the
+retained conclusion. The same generated text is used by the fresh-summary control.
+
+Complete summaries retain both queried facts in 8/8 tests for all four methods.
+With the closing-only instruction, fresh text and rebased KV answer 4/4 closing
+questions, while original-position holes answer 3/4. The model includes the
+supposedly omitted opening fact in one of four summaries. On the three cases
+where it actually omits that fact, all compacted methods score 0/3; full history
+scores 3/3. This does not demonstrate extra hidden memory from summary KV.
+
+The pilot adds 64 scored rows (784 total), not 64 independent tasks. It ran for
+153.5 seconds on the pinned 0.5B model, CPU FP32, two threads. Work and summary
+generation costs are charged separately; shared-host query timings and logical
+KV-size reductions are not physical allocation or production speed claims.
+Next experiments should measure larger tasks and reuse amortization, and connect
+generated summary chunks to the owning bank before any vLLM integration claim.

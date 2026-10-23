@@ -8,7 +8,7 @@ All results below are a small engineering screen on one pretrained 0.49B model. 
 
 ## What was held fixed
 
-Weights and tokenizer are pinned to `Qwen/Qwen2.5-0.5B-Instruct`, revision `7ae557604adf67be50417f59c2c2f167def9a775`. Every run uses CPU float32, PyTorch 2.5.1+cpu, Transformers 4.45.2, SDPA, four threads, and greedy decoding. This checkpoint has 24 layers, two KV heads, and head dimension 64. Uncompressed KV storage is 24,576 bytes per token across all layers. The constant system prompt remains present in the target cache.
+Weights and tokenizer are pinned to `Qwen/Qwen2.5-0.5B-Instruct`, revision `7ae557604adf67be50417f59c2c2f167def9a775`. The initial five runs use CPU float32, PyTorch 2.5.1+cpu, Transformers 4.45.2, SDPA, four threads, and greedy decoding. The generated-summary pilot uses two threads; each run records its own settings. This checkpoint has 24 layers, two KV heads, and head dimension 64. Uncompressed KV storage is 24,576 bytes per token across all layers. The constant system prompt remains present in the target cache.
 
 Target and donor chunks use literally identical token IDs. They are tokenized as explicit segments, and the segment IDs are saved; the entire intended target sequence is the same for full recomputation and each legal transplant. The donor's prefix is discarded. Its later suffix is also discarded and cannot causally affect the chunk. `wrong_payload` and `donor_full` are explicitly marked different-text controls.
 
@@ -106,15 +106,28 @@ python verify_fixture.py
 python verify_qwen_bank.py --output results/reproduction_bank
 ```
 
-Every result directory contains prompts and token IDs, machine-readable rows and summaries, diagnostic layer differences, resource metadata, and a snapshot of the exact source used. `script_sha256` identifies that snapshot. Later fixes do not rewrite earlier measurements. `validate_results.py` checks snapshot hashes, numerical identity controls, answer scores, arithmetic, cache sizes, and the hole-versus-contiguous position invariant without loading the model.
+The initial five result directories contain prompts and token IDs, machine-readable rows and summaries, diagnostic layer differences, resource metadata, and a snapshot of the exact source used. The generated-summary pilot additionally records generated work/summary text and their build costs; it does not contain layer-difference diagnostics. `script_sha256` identifies that snapshot. Later fixes do not rewrite earlier measurements. `validate_results.py` checks snapshot hashes, numerical identity controls, answer scores, arithmetic, cache sizes, and the hole-versus-contiguous position invariant without loading the model.
 
 The five quality runs contain 720 scored rows and took about seven minutes of model execution total with a peak RSS near 3.1 GiB. Setup, analysis, and the bank checks are separate. Retrieval decode is capped at eight new tokens, branch decode at ten; truncation flags are recorded. Samples are templated and share a model/prompt family, so 720 scored rows are not 720 independent tasks. There are only twelve retrieval records, twelve hidden-fact records, and eight arithmetic ledgers, with the ledgers repeated under two chat layouts.
 
-## Next controlled test: an explicit summary pass
+## An explicit model-generated summary pass
 
-The intended workflow is **reasoning branch → a separate summary pass → durable conclusion chunk → cached reuse by handle**. Summarization must explicitly preserve useful facts, conclusions, evidence, assumptions, and unresolved items. The current tests use checked, hand-authored conclusions; they do not yet evaluate the quality or cost of an automatic summarizer.
+`generated_summary.py` now evaluates **generated work → a separate generated summary → retained summary KV → later questions**. The summary cache comes directly from generation; the discarded work is not prefilled again to obtain it. This is a four-ledger CPU pilot, separate from the earlier hand-authored traces, with two summary instructions and 64 scored method/question combinations. It uses the same pinned model in FP32 with two CPU threads. [Results](results/generated_summary/summary.json), [prompts and generated text](results/generated_summary/cases.json), [costs and limits](results/generated_summary/metadata.json).
 
-The next test should generate reasoning with the model, then separately generate a durable summary from that reasoning, freeze that exact summary's text and contextual KV, and compare later questions using full history, freshly prefilled summary text, original-position summary KV, and rebased summary KV. The summary text must be identical in the latter three conditions. Include questions about both preserved facts and deliberately omitted details. Charge for the reasoning pass, summary-input prefill, summary generation, initial owned-cache copy, and later queries; report amortization over repeated uses. A summary does useful semantic compression only if the subsequent tasks remain answerable. Keeping its contextual KV should be evaluated for additional benefit, not assumed to replace adequate summary content.
+| Method | Complete summary: both facts | Closing-only instruction: closing fact | Actually omitted opening fact |
+|---|---:|---:|---:|
+| Full generated branch retained | 8/8 | 4/4 | 3/3 |
+| Same summary text freshly prefilled | 8/8 | 4/4 | 0/3 |
+| Retained summary KV, position holes | 8/8 | 3/4 | 0/3 |
+| Retained summary KV, rebased | 8/8 | 4/4 | 0/3 |
+
+One of four closing-only summaries disobeyed the instruction and included all transaction facts. That case explains the raw opening-answer score of 1/4 in each compacted method; it is not hidden-fact recovery. All outputs and failures are retained. Every work and summary generation stopped normally. A sufficient generated summary worked in this small pilot; keeping its contextual KV did not make omitted facts reliably retrievable.
+
+Median work generation/build cost was 18.65 seconds and median summary build/generation cost was 4.44 seconds. For complete summaries, median later query preparation was 502 ms for fresh summary text and about 226 ms for retained summary KV; the already-cached full branch was 233 ms. These shared-host CPU timings do not establish an end-to-end throughput gain. Logical retained cache size fell from a median 8.45 MB to 1.70 MB; this concatenating harness does not measure physical reclamation or pointer sharing. The separate chunk-bank tests above measure physical ownership. Broader tasks, longer reasoning, repeated-use amortization, and production Gemma/vLLM compatibility remain untested.
+
+```bash
+python generated_summary.py --output results/reproduction_generated_summary --count 4 --threads 2
+```
 
 ## Relation to existing work and a backend boundary
 

@@ -11,6 +11,26 @@ from pathlib import Path
 def validate_run(path):
     metadata = json.loads((path / "metadata.json").read_text())
     rows = [json.loads(line) for line in (path / "rows.jsonl").read_text().splitlines()]
+    if (path / "generated_summary.py").exists():
+        assert len(rows) == metadata["rows"], path
+        assert hashlib.sha256((path / "generated_summary.py").read_bytes()).hexdigest() == metadata["script_sha256"]
+        cases = {(c["case_id"], c["kind"]): c for c in json.loads((path / "cases.json").read_text())}
+        seen = set()
+        for row in rows:
+            key = (row["case_id"], row["summary_kind"], row["question_kind"], row["method"])
+            assert key not in seen, key
+            seen.add(key)
+            case = cases[key[:2]]
+            assert case["opening"] + case["deposit"] - case["withdrawal"] == case["closing"]
+            assert row["gold"] == str(case[row["question_kind"]]), key
+            assert row["exact_answer"] == (row["answer"].strip() == row["gold"]), key
+            for field in ["gold_nll_per_token", "online_assembly_and_prefill_ms", "decode_ms", "work_build_ms", "summary_build_ms"]:
+                assert math.isfinite(row[field]) and row[field] >= 0, (key, field)
+            tokens = len(case["tokens"]["p"]) + len(case["tokens"]["c"])
+            if row["method"] == "full_generated_branch":
+                tokens += len(case["tokens"]["r"])
+            assert row["logical_retained_cache_bytes"] == 24576 * tokens, key
+        return {"run": path.name, "rows": len(rows), "status": "PASS"}
     assert len(rows) == metadata["n_scored_rows"], path
     branch = "kind" in rows[0]
     source = path / ("branch_compaction.py" if branch else "run_experiment.py")

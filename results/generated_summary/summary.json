@@ -1,0 +1,114 @@
+[
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "opening",
+    "method": "fresh_generated_summary",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "opening",
+    "method": "full_generated_branch",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "opening",
+    "method": "retained_summary_holes",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "opening",
+    "method": "retained_summary_rebased",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "closing",
+    "method": "fresh_generated_summary",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "closing",
+    "method": "full_generated_branch",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "closing",
+    "method": "retained_summary_holes",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "all_facts",
+    "question_kind": "closing",
+    "method": "retained_summary_rebased",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "opening",
+    "method": "fresh_generated_summary",
+    "n": 4,
+    "exact_answers": 1
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "opening",
+    "method": "full_generated_branch",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "opening",
+    "method": "retained_summary_holes",
+    "n": 4,
+    "exact_answers": 1
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "opening",
+    "method": "retained_summary_rebased",
+    "n": 4,
+    "exact_answers": 1
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "closing",
+    "method": "fresh_generated_summary",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "closing",
+    "method": "full_generated_branch",
+    "n": 4,
+    "exact_answers": 4
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "closing",
+    "method": "retained_summary_holes",
+    "n": 4,
+    "exact_answers": 3
+  },
+  {
+    "summary_kind": "closing_only",
+    "question_kind": "closing",
+    "method": "retained_summary_rebased",
+    "n": 4,
+    "exact_answers": 4
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "device": "cpu",
+  "dtype": "float32",
+  "torch": "2.5.1+cpu",
+  "transformers": "4.45.2",
+  "python": "3.12.3",
+  "arguments": {
+    "output": "results/generated_summary",
+    "count": 4,
+    "threads": 2,
+    "seed": 20261023,
+    "max_new_tokens": 12,
+    "work_tokens": 256,
+    "summary_tokens": 160
+  },
+  "script_sha256": "1d1117e4af209832735cf6a7c1793d1196d233f8e2084c4d9b5fa695e7338a53",
+  "elapsed_seconds": 153.51884713600157,
+  "rows": 64,
+  "limits": [
+    "Small greedy CPU model, not production Gemma or vLLM.",
+    "Generated summaries can contain errors; all cases retained, including truncations.",
+    "Logical retained KV bytes do not establish physical allocation savings in this concatenating harness.",
+    "Summary/work generation costs recorded separately; no end-to-end speedup assumed.",
+    "No discarded work was prefilled again to obtain the retained generated summary KV."
+  ]
+}
