@@ -1,5 +1,125 @@
 # Experiments with contextual KV chunks
 
+[Research record](#research-record) · [Results](#retrieval-results) ·
+[Reproduce](#reproduce-and-inspect)
+
+## The Kitchen Table Journals
+
+Original fiction for this project, inspired by Octavia E. Butler's
+*Parable of the Sower* and continuing the Southern California journals on the
+two REDCELL model cards. The [research record](#research-record) follows the
+story; its measurements and limits describe the actual experiments.
+
+| Part | Journal date | Story | Project |
+|---|---|---|---|
+| 1 | October 14, 2027 | [The whole seed](https://huggingface.co/Xananthium/REDCELL-26B-A4B-OSINT-Cyber-Abliterated-Pilot-BF16-Vision#the-whole-seed) | Complete BF16 model |
+| 2 | October 15, 2027 | [What we could carry](https://huggingface.co/Xananthium/REDCELL-26B-A4B-OSINT-Cyber-Abliterated-Pilot-W6A8-Vision#what-we-could-carry) | W6A8 model |
+| 3 | October 16, 2027 | [The work between us](https://github.com/Xananthium/batbox/blob/main/README.md#the-work-between-us) | BatBox |
+| 4 | October 18, 2027 | [What remembering costs](#what-remembering-costs) | KV-cache research |
+
+### What remembering costs
+
+**October 18, 2027**
+
+We lost an afternoon to something the machine had already done.
+
+There were three questions about the same repair notes. Each time, it worked
+through the common beginning again. I watched the delay and thought about
+Tessa waiting for her lesson. Then I looked at the copies of the saved work
+and thought about the space they occupied.
+
+I wanted to keep the useful part once and let the questions share it.
+
+"How much will that save?" Tessa asked.
+
+I started to tell her what I hoped. She pointed at the words she had written
+above the workstation three days ago: SHOW WHAT IT COSTS.
+
+So I made a smaller experiment. I used a small model on the CPU, with short
+invented accounts whose answers I could check by hand. The two old cards
+stayed available for the work people were waiting to do. I wrote down the
+time and the stored bytes. I had no measurement of electricity saved, and I
+left that space empty.
+
+The first account began with money in a tin and ended with a different
+amount. Between them were purchases and contributions. I had the model do
+the work, then make a shorter record for a later question.
+
+When the shorter record gave both amounts, it could answer both questions.
+When it gave only the amount left, it could not reliably tell me what had
+been in the tin at the beginning.
+
+I had kept the computed cache of the short record, including the effect of
+what had come before it. I wanted that to be enough. I tried keeping its
+old positions. I tried adjusting them. I asked again.
+
+The missing amount stayed missing.
+
+Mrs. Ruiz came in while I was looking at another wrong answer. She had
+brought the notebook in which she kept the household contributions. I told
+her I was trying to make the machine keep more while carrying less.
+
+She opened to a page with a number crossed out. Under it was the correction
+and, in a different hand, the reason.
+
+"If you keep only what's left," she said, "where do I look when somebody
+says they paid twice?"
+
+I had chosen the closing balance because it was easy to test. She had named
+the question that would bring someone to her door.
+
+We added opening amounts to the short records. We kept the full accounts
+where they could be read again. That used space too. Getting the originals
+back into the model would take work too. I put both things in the notes.
+
+There was something useful in the experiment. Questions could share a
+reference to the same unchanged piece of stored computation. I could count
+one owned piece instead of several copies. Each question still needed room
+for its own continuation, and the machine still had to attend to what it
+used. I showed Tessa the counts before I showed her the answer.
+
+"And if you change the beginning?"
+
+That was where the work became less tidy.
+
+The same words could arrive after different histories. Moving their saved
+keys to the right positions helped in some tests. It did not make those
+histories disappear. Pieces from different paths did not always work well
+together. One pleasing answer was followed by several that were worse.
+
+I kept the pleasing one. I kept the others beside it.
+
+By then the kitchen had grown hot. Tessa had put a cup over a loose screw
+so it would not roll off the table. She moved it to make room for my notebook
+and asked when her turn began.
+
+I wanted another hour. There was a change I had not tried.
+
+"You wrote the schedule," she said.
+
+I saved the experiment and stopped it. Nothing from it had been put into
+the system people were using. The records were short, the model small. I
+could show that some storage was shared. I could show which questions had
+been answered. I could not give her the afternoon back.
+
+While she studied, I copied the results to the other drive. The original
+accounts went with them, and the failed answers, and the instructions for
+repeating the work. If somebody else found a way forward, I wanted them to
+know where my certainty ended.
+
+Mrs. Ruiz took her notebook home. She left me a page headed *Questions we
+need to ask later*. There were six. Only two were about the final amount.
+
+I have put that page at the front of tomorrow's work. My allotted hour is
+shorter than I want. It is still my turn to carry water afterward.
+
+[Previous: The work between us](https://github.com/Xananthium/batbox/blob/main/README.md#the-work-between-us)
+· [Series index](#the-kitchen-table-journals)
+
+---
+
+## Research record
+
 This directory contains actual CPU experiments on **Qwen2.5-0.5B-Instruct**, not a random model or a simulation of model quality. The question is whether a chunk's already-computed keys and values can be moved from another history, or kept after deleting earlier reasoning, while retaining useful context. No training was performed. The production GPU backend was not used or changed.
 
 The initial evidence is mixed: correcting positions made ordinary retrieval reuse work much better; a helpful donor improved two retrieval answers; arbitrary layer mixing made several answers worse. Keeping a useful, explicit conclusion after deleting the reasoning worked in the first branch tests. The tests did **not** show reliable recovery of facts omitted from the retained text.
