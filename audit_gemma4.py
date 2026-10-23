@@ -30,6 +30,10 @@ SOURCES = (
     "v1/worker/block_table.py",
     "v1/worker/gpu_model_runner.py",
     "v1/spec_decode/gemma4.py",
+    "v1/worker/gpu/model_runner.py",
+    "v1/worker/gpu/input_batch.py",
+    "v1/worker/gpu/block_table.py",
+    "v1/worker/gpu/spec_decode/gemma4/speculator.py",
 )
 
 
@@ -76,7 +80,10 @@ def main():
         "runtime_snapshot_sha256": sha(runtime_raw),
         "runtime_snapshot_utc": runtime.get("utc"),
         "captured_metrics_sha256": sha(metric_text.encode()),
-        "runtime_source_revision_reported": runtime.get("source_revision"),
+        # This deployment snapshot's source_revision identifies the Hauhau
+        # model repository. It is not a vLLM source commit.
+        "model_source_revision_reported": runtime.get("source_revision"),
+        "vllm_source_revision_verified": None,
         "runtime_manifest_sha256_reported": runtime.get("runtime_python_manifest_sha256"),
         "tensor_parallel_size": tp,
         "configured_context": int(option("--max-model-len", "0")),
@@ -86,6 +93,7 @@ def main():
         "boundary_native_layers": list(skip),
         "cache_dtype": labels["cache_dtype"],
         "unified_tq": runtime["environment"].get("VLLM_TQ_UNIFIED_ATTN") == "1",
+        "v2_model_runner": runtime["environment"].get("VLLM_USE_V2_MODEL_RUNNER") == "1",
         "swa_bounded_replay_captured": labels.get("swa_bounded_replay"),
         "speculative_method": speculative.get("method"),
         "speculative_tokens": speculative.get("num_speculative_tokens", 0),

@@ -10,8 +10,10 @@ imports vLLM nor reads GPU allocations. All returned plans explicitly say
 The audit used the converted Gemma4-31B model, not the Qwen family named in its
 legacy serving alias. [The source/config hashes and layer descriptions are
 recorded here](results/gemma4_compatibility/audit.json). Captured deployment
-metadata reports vLLM source revision `9654466e82d83f5ebfe1518a369bc5900873abb1`,
-tensor parallelism 2, a 200,000-token serving limit, primary block size 16,
+metadata reports Hauhau **model** revision `9654466e82d83f5ebfe1518a369bc5900873abb1`;
+this is not a vLLM source commit. The installed vLLM commit is unverified;
+the audit records individual installed source-file hashes. The deployment has
+`VLLM_USE_V2_MODEL_RUNNER=1`, tensor parallelism 2, a 200,000-token serving limit, primary block size 16,
 `turboquant_4bit_nc`, `VLLM_TQ_UNIFIED_ATTN=1`, and MTP with two speculative
 tokens. Actual per-group tensor strides, block sizes, leases, and resident pages
 were **not** captured; these must be obtained from a live allocator before an
@@ -125,10 +127,13 @@ upstream documentation alone is not a byte-level ABI specification.
 | Group/layout discovery | `Attention.get_kv_cache_spec`, `v1/kv_cache_interface.py`, model-runner cache configuration | Resolve actual per-layer/group shape, stride, backend, TP rank, padding and bytes; never infer from the alias |
 | Physical ownership | `v1/core/block_pool.py`: `touch`, `free_blocks`, `is_block_writable` | Bank and in-flight leases, allocation epochs, and release ordering; a Python pointer alone pins nothing |
 | Request attachment | `v1/core/kv_cache_manager.py`: `get_computed_blocks`, `allocate_slots`, `free` | Separate contextual imports from APC keys and route imported blocks through scheduler accounting |
-| Position/slot separation | `v1/worker/gpu_model_runner.py`, `v1/worker/block_table.py` | Supply logical RoPE positions independently of dense token indices and writable cache slots |
+| Position/slot separation | Active V2: `v1/worker/gpu/model_runner.py`, `input_batch.py`, `block_table.py` | Supply logical RoPE positions independently of dense token indices and writable cache slots |
 | Attention | `v1/attention/backends/turboquant_attn.py` and `ops/turboquant_soa/triton_turboquant_unified_attention.py` | Segment descriptors, logical causal/local masks, and pre-Hadamard query shifts for every execution path |
 | Window eviction | `v1/core/single_type_kv_cache_manager.py`: skipped-block removal and sliding-window manager | Publish resident conclusion pages before eviction; reject null/missing pages and retain leases through reuse |
-| Speculation | `v1/spec_decode/gemma4.py`: `_setup_gemma4_kv_sharing` | Preserve target/draft mapping, accepted-token boundaries, lookahead retention and rollback; keep speculative writes private |
+| Speculation | Active V2: `v1/worker/gpu/spec_decode/gemma4/speculator.py`: `_setup_gemma4_kv_sharing` | Preserve target/draft mapping, accepted-token boundaries, lookahead retention and rollback; keep speculative writes private |
+
+The source manifest also includes legacy runner counterparts for comparison;
+their presence does not establish that the deployment executes them.
 
 Ordinary APC hashes include parent context, token IDs, and extra identity fields;
 the allocator reference count protects shared blocks from eviction. These

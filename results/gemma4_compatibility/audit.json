@@ -1,12 +1,13 @@
 {
   "status": "static_cpu_audit_not_backend_support",
-  "observed_utc": "2026-10-23T16:32:33.375204+00:00",
+  "observed_utc": "2026-10-23T16:40:19.375780+00:00",
   "config_sha256": "bda043898b665598b3e35b580d5f0e06c5509d4d19f0c66bf3e929ea5bf65c6e",
   "tokenizer_sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
   "runtime_snapshot_sha256": "4f41b6f0acc9df3d7d1da6b03557d13f834d139153c654b656782638695d1dfe",
   "runtime_snapshot_utc": "2026-10-23T14:26:33.401018+00:00",
   "captured_metrics_sha256": "1ff46857611b3635e55626406dd3aafb85c1fc09f1004a5bb094b0f2e1963540",
-  "runtime_source_revision_reported": "9654466e82d83f5ebfe1518a369bc5900873abb1",
+  "model_source_revision_reported": "9654466e82d83f5ebfe1518a369bc5900873abb1",
+  "vllm_source_revision_verified": null,
   "runtime_manifest_sha256_reported": "0bfac2d84687d357acc76b840ca77fd6fa95cef74c39f8c0e1f19a265be0dd8a",
   "tensor_parallel_size": 2,
   "configured_context": 200000,
@@ -21,6 +22,7 @@
   ],
   "cache_dtype": "turboquant_4bit_nc",
   "unified_tq": true,
+  "v2_model_runner": true,
   "swa_bounded_replay_captured": "True",
   "speculative_method": "mtp",
   "speculative_tokens": 2,
@@ -4365,6 +4367,390 @@
         {
           "name": "_setup_gemma4_kv_sharing",
           "line": 302
+        }
+      ]
+    },
+    "v1/worker/gpu/model_runner.py": {
+      "sha256": "5240fe8d62d403e466a4aa07a28fb7af5c0f1e9b9c3bb08c4003185bde461f87",
+      "symbols": [
+        {
+          "name": "GPUModelRunner",
+          "line": 193
+        },
+        {
+          "name": "ExecuteModelState",
+          "line": 2403
+        },
+        {
+          "name": "BatchReqState",
+          "line": 2416
+        },
+        {
+          "name": "sort_batch_req_ids",
+          "line": 2435
+        },
+        {
+          "name": "__init__",
+          "line": 194
+        },
+        {
+          "name": "update_max_model_len",
+          "line": 363
+        },
+        {
+          "name": "get_supported_tasks",
+          "line": 367
+        },
+        {
+          "name": "load_model",
+          "line": 378
+        },
+        {
+          "name": "dp_size",
+          "line": 550
+        },
+        {
+          "name": "dp_rank",
+          "line": 555
+        },
+        {
+          "name": "get_model",
+          "line": 559
+        },
+        {
+          "name": "get_draft_model",
+          "line": 562
+        },
+        {
+          "name": "reload_weights",
+          "line": 568
+        },
+        {
+          "name": "main_stream",
+          "line": 585
+        },
+        {
+          "name": "get_encoder_timing_stats",
+          "line": 589
+        },
+        {
+          "name": "get_kv_cache_spec",
+          "line": 593
+        },
+        {
+          "name": "initialize_kv_cache",
+          "line": 605
+        },
+        {
+          "name": "_init_kv_zero_meta",
+          "line": 806
+        },
+        {
+          "name": "_dummy_run",
+          "line": 818
+        },
+        {
+          "name": "_dummy_sampler_run",
+          "line": 972
+        },
+        {
+          "name": "_dummy_pooler_run",
+          "line": 986
+        },
+        {
+          "name": "profile_run",
+          "line": 991
+        },
+        {
+          "name": "reset_mm_cache",
+          "line": 1023
+        },
+        {
+          "name": "reset_encoder_cache",
+          "line": 1027
+        },
+        {
+          "name": "release_late_interaction_query_cache",
+          "line": 1033
+        },
+        {
+          "name": "profile_cudagraph_memory",
+          "line": 1038
+        },
+        {
+          "name": "needs_cudagraph_capture",
+          "line": 1042
+        },
+        {
+          "name": "capture_model",
+          "line": 1053
+        },
+        {
+          "name": "_remove_request",
+          "line": 1134
+        },
+        {
+          "name": "finish_requests",
+          "line": 1152
+        },
+        {
+          "name": "free_states",
+          "line": 1166
+        },
+        {
+          "name": "update_pp_decode_requests",
+          "line": 1171
+        },
+        {
+          "name": "add_requests",
+          "line": 1181
+        },
+        {
+          "name": "update_requests",
+          "line": 1236
+        },
+        {
+          "name": "gather_batch_req_state",
+          "line": 1272
+        },
+        {
+          "name": "prepare_inputs",
+          "line": 1354
+        },
+        {
+          "name": "prepare_attn",
+          "line": 1556
+        },
+        {
+          "name": "prepare_dummy_attn",
+          "line": 1576
+        },
+        {
+          "name": "sample",
+          "line": 1592
+        },
+        {
+          "name": "postprocess_sampled",
+          "line": 1679
+        },
+        {
+          "name": "_merge_ec_connector_no_forward",
+          "line": 1709
+        },
+        {
+          "name": "execute_model",
+          "line": 1719
+        },
+        {
+          "name": "sample_tokens",
+          "line": 2088
+        },
+        {
+          "name": "take_draft_token_ids",
+          "line": 2282
+        },
+        {
+          "name": "pool",
+          "line": 2287
+        },
+        {
+          "name": "postprocess_num_computed_tokens",
+          "line": 2329
+        },
+        {
+          "name": "shutdown",
+          "line": 2337
+        },
+        {
+          "name": "eplb_state",
+          "line": 2375
+        },
+        {
+          "name": "eplb_state",
+          "line": 2379
+        },
+        {
+          "name": "eep_eplb_suppressed",
+          "line": 2383
+        },
+        {
+          "name": "eep_eplb_suppressed",
+          "line": 2387
+        },
+        {
+          "name": "setup_eplb_from_mapping",
+          "line": 2390
+        },
+        {
+          "name": "pcp_manager_cls",
+          "line": 2399
+        }
+      ]
+    },
+    "v1/worker/gpu/input_batch.py": {
+      "sha256": "2e4c2ebdb2c1ce04026d15288f5408624d880f335735636985efa3a3209a56f2",
+      "symbols": [
+        {
+          "name": "InputBuffers",
+          "line": 19
+        },
+        {
+          "name": "InputBatch",
+          "line": 39
+        },
+        {
+          "name": "set_dummy_context",
+          "line": 223
+        },
+        {
+          "name": "_prepare_prefill_inputs_kernel",
+          "line": 271
+        },
+        {
+          "name": "prepare_prefill_inputs",
+          "line": 320
+        },
+        {
+          "name": "_prepare_pos_seq_lens_kernel",
+          "line": 348
+        },
+        {
+          "name": "prepare_pos_seq_lens",
+          "line": 384
+        },
+        {
+          "name": "_combine_sampled_and_draft_tokens_kernel",
+          "line": 406
+        },
+        {
+          "name": "combine_sampled_and_draft_tokens",
+          "line": 466
+        },
+        {
+          "name": "_get_num_sampled_and_rejected_kernel",
+          "line": 508
+        },
+        {
+          "name": "get_num_sampled_and_rejected",
+          "line": 536
+        },
+        {
+          "name": "_post_update_kernel",
+          "line": 557
+        },
+        {
+          "name": "post_update",
+          "line": 617
+        },
+        {
+          "name": "_post_update_num_computed_tokens_kernel",
+          "line": 659
+        },
+        {
+          "name": "post_update_num_computed_tokens",
+          "line": 674
+        },
+        {
+          "name": "_expand_idx_mapping_kernel",
+          "line": 691
+        },
+        {
+          "name": "expand_idx_mapping",
+          "line": 710
+        },
+        {
+          "name": "__init__",
+          "line": 20
+        },
+        {
+          "name": "make_dummy",
+          "line": 127
+        }
+      ]
+    },
+    "v1/worker/gpu/block_table.py": {
+      "sha256": "822b65f3d7bd4cad47693c101ba5134923876b9c81d5a609afd6bca6dee38ba8",
+      "symbols": [
+        {
+          "name": "BlockTables",
+          "line": 17
+        },
+        {
+          "name": "_gather_block_tables_kernel",
+          "line": 233
+        },
+        {
+          "name": "_compute_slot_mappings_kernel",
+          "line": 273
+        },
+        {
+          "name": "__init__",
+          "line": 21
+        },
+        {
+          "name": "_make_ptr_tensor",
+          "line": 87
+        },
+        {
+          "name": "init_block_table_layout_tensors",
+          "line": 93
+        },
+        {
+          "name": "append_block_ids",
+          "line": 110
+        },
+        {
+          "name": "apply_staged_writes",
+          "line": 131
+        },
+        {
+          "name": "gather_block_tables",
+          "line": 145
+        },
+        {
+          "name": "get_dummy_block_tables",
+          "line": 174
+        },
+        {
+          "name": "compute_slot_mappings",
+          "line": 187
+        },
+        {
+          "name": "get_dummy_slot_mappings",
+          "line": 220
+        }
+      ]
+    },
+    "v1/worker/gpu/spec_decode/gemma4/speculator.py": {
+      "sha256": "547fda08c0d4b9426de95a2805357ccea8bd6a83322bf431102807be1445752a",
+      "symbols": [
+        {
+          "name": "_copy_target_kv_scales",
+          "line": 28
+        },
+        {
+          "name": "Gemma4Speculator",
+          "line": 49
+        },
+        {
+          "name": "advance_draft_positions",
+          "line": 51
+        },
+        {
+          "name": "load_draft_model",
+          "line": 56
+        },
+        {
+          "name": "_create_draft_vllm_config",
+          "line": 72
+        },
+        {
+          "name": "_setup_gemma4_kv_sharing",
+          "line": 131
+        },
+        {
+          "name": "_share_embeddings",
+          "line": 214
         }
       ]
     }

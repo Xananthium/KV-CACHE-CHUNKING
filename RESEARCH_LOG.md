@@ -146,3 +146,10 @@ from dense sequence offsets, so removing interior blocks alone is incorrect.
 The full plan and source hashes are in `GEMMA4_ADAPTER.md` and
 `results/gemma4_compatibility/`. No production package, service, or GPU was used
 or changed. The Qwen bank remains the only implemented attention runtime here.
+
+Provenance correction: the captured `source_revision` is the Hauhau model
+repository revision, verified against the deployment's model provenance and
+source-info records. It is not an installed vLLM source revision. The audit now
+names it accordingly and leaves the vLLM commit unverified. The captured
+`VLLM_USE_V2_MODEL_RUNNER=1` also selects the V2 runner and Gemma speculator;
+the hook table and source manifest now explicitly include those active paths.
