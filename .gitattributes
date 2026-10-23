@@ -1,0 +1,3 @@
+# Python's csv writer emits standard CRLF; preserve measured raw artifacts.
+*.csv -text whitespace=cr-at-eol
+*.pt binary
