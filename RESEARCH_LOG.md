@@ -153,3 +153,30 @@ source-info records. It is not an installed vLLM source revision. The audit now
 names it accordingly and leaves the vLLM commit unverified. The captured
 `VLLM_USE_V2_MODEL_RUNNER=1` also selects the V2 runner and Gemma speculator;
 the hook table and source manifest now explicitly include those active paths.
+
+## 2026-10-23: production backend now serves the original GGUF
+
+The separate backend comparison found that existing
+[vLLM GGUF plugin PR #141](https://github.com/vllm-project/vllm-gguf-plugin/pull/141)
+kernels close the serving-speed gap on the two RTX 3090s. With unchanged
+200,000-token context, TP2, TurboQuant4, prefix caching, 80 GiB CPU offload,
+MTP2, and sampling, the original GGUF measured 91.41 output tokens/s for one
+client and 251.87 combined for four, versus 90.25 and 242.18 for the local
+mixed INT4/INT8 conversion. A cold 63,460-token retrieval produced its first
+output in 93.83 seconds versus 111.04 seconds. All 22 functional checks passed.
+Two timed batches establish comparable measured speed, not statistical
+superiority or performance for every workload.
+
+The pinned release passed a persistent service restart and tool/reasoning
+smoke check. The prior converted setup remains available for rollback.
+[The report, source pins, compatibility patch, and limitations are recorded
+in Batbox](https://github.com/Xananthium/batbox/blob/0245507/experiments/backend/20261023-qat-format/optimized_gguf/RESULTS.md).
+The existing upstream PR deserves the kernel-port credit; this work contributes
+Ampere measurements and Gemma compatibility evidence.
+
+This changes the production weight format, not the status of contextual KV
+splicing: no Gemma/TurboQuant chunk-bank runtime has been installed. The earlier
+adapter audit remains an explicitly dated snapshot of the converted setup.
+Future cache handles must identify the actual model weights and kernel/cache
+ABI. A restart or format change invalidates old physical handles; an unchanged
+served-model alias is not sufficient evidence that two KV states are compatible.
