@@ -128,6 +128,31 @@ All results below are a small engineering screen on one pretrained 0.49B model. 
 
 A separate [Gemma4/vLLM/TurboQuant compatibility audit](GEMMA4_ADAPTER.md) now documents concrete adapter hooks and correctness blockers. Ten CPU metadata/algebra tests pass; no Gemma GPU inference or serving integration is claimed.
 
+### October 24, 2026: Qwen3.8 serving work
+
+The associated Batbox backend now has a separate
+[Qwen3.8 runtime research record](https://github.com/Xananthium/batbox/tree/94f5a16/experiments/qwen38-20261024).
+Its GPU tests use the original Hauhau mixed Q4_K_P GGUF, two RTX 3090s at
+280 W each, 200k configured context, TurboQuant KV, and existing DFlash support.
+A surplus-lane mask fixes a reproduced attention-kernel inconsistency; a small
+dispatch change lets the existing 3D kernel handle eight-token verification
+blocks. Numerical checks, source patches and reproduction instructions are
+published with the measurements.
+
+For four identical 24k-input requests, the corrected compiled DFlash profile
+took 62.23 seconds cold and 22.73 seconds on an exact cached replay, with
+76,800 of 96,460 input tokens served from the GPU prefix cache. These are
+forced 512-output-token throughput fixtures, not completed coding tasks.
+The first two xhigh quality profiles exhausted their coding output budgets
+without producing code; medium reasoning is the next measured comparison.
+
+This work establishes a serving baseline for future chunk experiments. It uses
+exact-prefix caching and does not deploy this repository's arbitrary chunk
+transplants or delete reasoning from a live KV cache. Qwen3.8 also has recurrent
+Gated DeltaNet state alongside attention KV; a future branch adapter must handle
+that state explicitly. The CPU transplant results below remain results for
+Qwen2.5-0.5B, with their original limitations.
+
 ## What was held fixed
 
 Weights and tokenizer are pinned to `Qwen/Qwen2.5-0.5B-Instruct`, revision `7ae557604adf67be50417f59c2c2f167def9a775`. The initial five runs use CPU float32, PyTorch 2.5.1+cpu, Transformers 4.45.2, SDPA, four threads, and greedy decoding. The generated-summary pilot uses two threads; each run records its own settings. This checkpoint has 24 layers, two KV heads, and head dimension 64. Uncompressed KV storage is 24,576 bytes per token across all layers. The constant system prompt remains present in the target cache.
